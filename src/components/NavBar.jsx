@@ -1,22 +1,13 @@
-const NavBar = () => {
+const NavBar = ({ menuItems }) => {
+  console.log(menuItems);
   return (
     <nav className="NavBar">
-      <ul>
-        <li>
-          <a href="#title" title="title" className="nav-link">
-            title
-          </a>
-        </li>
-        <li>
-          <a href="#title" title="title" className="nav-link">
-            title
-          </a>
-        </li>
-        <li>
-          <a href="#title" title="title" className="nav-link">
-            title
-          </a>
-        </li>
+      <ul className="nav-ul">
+        {menuItems.map((item) => (
+          <li>
+            <a href={item.href}>{item.title}</a>
+          </li>
+        ))}
       </ul>
     </nav>
   );

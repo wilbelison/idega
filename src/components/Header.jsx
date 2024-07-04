@@ -1,16 +1,15 @@
-import React from "react";
 import Logo from "./Logo";
 import NavBar from "./NavBar";
 import Search from "./Search";
 import CartButton from "./CartButton";
 
-const Header = () => {
+const Header = ({ menuItems, cartItems, updateCartItems }) => {
   return (
     <header className="Header">
       <Logo />
-      <NavBar />
+      <NavBar menuItems={menuItems} />
       <Search />
-      <CartButton />
+      <CartButton cartItems={cartItems} updateCartItems={updateCartItems} />
     </header>
   );
 };
