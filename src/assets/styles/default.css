@@ -1,0 +1,28 @@
+/* Default */
+
+@import url("https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&display=swap");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizelegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  color: #717171;
+  font-family: Fustat, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  scroll-behavior: smooth;
+}
