@@ -4,7 +4,7 @@ const NavBar = ({ menuItems }) => {
     <nav className="NavBar">
       <ul className="nav-ul">
         {menuItems.map((item) => (
-          <li>
+          <li key={item.id}>
             <a href={item.href}>{item.title}</a>
           </li>
         ))}
