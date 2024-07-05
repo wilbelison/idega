@@ -1,5 +1,4 @@
 const NavBar = ({ menuItems }) => {
-  console.log(menuItems);
   return (
     <nav className="NavBar">
       <ul className="nav-ul">

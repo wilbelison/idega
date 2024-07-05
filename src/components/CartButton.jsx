@@ -3,9 +3,9 @@ import iconCart from "../assets/images/icon-cart.svg";
 const CartButton = ({ cartItems, updateCartItems }) => {
   function cartTest() {
     const items = [
-      { id: 0, quantity: 1, stock: 1, price: 1.19 },
-      { id: 1, quantity: 2, stock: 10, price: 2.99 },
-      { id: 2, quantity: 3, stock: 100, price: 3.0 },
+      { id: 0, stock: 1, price: 1.19, count: 1 },
+      { id: 1, stock: 10, price: 2.99, count: 2 },
+      { id: 2, stock: 100, price: 3.0, count:  },
     ];
     updateCartItems(items);
   }
@@ -14,9 +14,9 @@ const CartButton = ({ cartItems, updateCartItems }) => {
   let totalCost = 0.0;
 
   cartItems.forEach((item) => {
-    numberOfItems += item.quantity;
+    numberOfItems += item.count;
     console.log(numberOfItems);
-    totalCost += item.quantity * item.price;
+    totalCost += item.count * item.price;
   });
 
   return (
