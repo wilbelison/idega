@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
 import ProductCounter from "./ProductCounter";
 
-const ProductCard = ({ product, updateCart }) => {
-  console.log(product);
+const ProductCard = ({ product }) => {
   return (
-    <div className={"ProductCard id-" + product.id}>
-      <h3 className="card-name">{product.title}</h3>
-      <p className="card-price">{product.price}</p>
-      <ProductCounter counter={product.cart} stock={product.stock} updateCart={updateCart}  />
+    <div className={`ProductCard producId-${product.id}`}>
+      <Link to={`/product/${product.id}`} className="card-link">
+        <h3 className="card-title">{product.title}</h3>
+        <img className="card-thumbnail" src={product.thumbnail} alt="" />
+        <p className="card-description">{product.description}</p>
+        <p className="card-price">{product.price}</p>
+      </Link>
+      <ProductCounter productId={product.id} />
     </div>
   );
 };

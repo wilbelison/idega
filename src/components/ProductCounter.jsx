@@ -1,27 +1,19 @@
-const Productcount = ({ count, stock, updateCount }) => {
+const ProductCounter = ({ productId }) => {
   return (
-    <div className="Productcount">
+    <div className="ProductCount">
       <button
         className="button-remove"
         onClick={() => {
-          count > 1 ? updateCount(count--) : updateCount(0);
+          console.log("remove:", productId);
         }}
       >
         -
       </button>
-      <input
-        className="input-count"
-        type="text"
-        value={count}
-        onClick={() => {
-          this.value >= 0 ? updateCount(this.value) : updateCount(count);
-        }}
-      />
-      <div className="Productcount">
+      <span className="counter">0</span>
       <button
         className="button-add"
         onClick={() => {
-          count < stock ? updateCount(count++) : updateCount(0);
+          console.log("add:", productId);
         }}
       >
         +
@@ -30,4 +22,4 @@ const Productcount = ({ count, stock, updateCount }) => {
   );
 };
 
-export default Productcount;
+export default ProductCounter;

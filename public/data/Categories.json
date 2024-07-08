@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Ação e Aventura",
+    "id": 0
+  },
+  {
+    "title": "Luta e Esportes",
+    "id": 1
+  },
+  {
+    "title": "Plataforma",
+    "id": 2
+  },
+  {
+    "title": "Puzzle e Casual",
+    "id": 3
+  },
+  {
+    "title": "RPG e Estratégia",
+    "id": 4
+  },
+  {
+    "title": "Mais Gêneros",
+    "id": 5
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "stock": 99,
+    "category": 0,
+    "thumbnail": "https://placehold.co/200x200?text=thumbnail",
+    "image": "https://placehold.co/800x800?text=image",
+    "title": "Produto 0",
+    "description": "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
+    "price": 0.99
+  },
+  {
+    "id": 1,
+    "stock": 99,
+    "category": 1,
+    "thumbnail": "https://placehold.co/200x200?text=thumbnail",
+    "image": "https://placehold.co/800x800?text=image",
+    "title": "Produto 1",
+    "description": "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
+    "price": 1.99
+  },
+  {
+    "id": 2,
+    "stock": 99,
+    "category": 2,
+    "thumbnail": "https://placehold.co/200x200?text=thumbnail",
+    "image": "https://placehold.co/800x800?text=image",
+    "title": "Produto 2",
+    "description": "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
+    "price": 2.99
+  },
+  {
+    "id": 3,
+    "stock": 99,
+    "category": 3,
+    "thumbnail": "https://placehold.co/200x200?text=thumbnail",
+    "image": "https://placehold.co/800x800?text=image",
+    "title": "Produto 3",
+    "description": "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
+    "price": 3.99
+  },
+  {
+    "id": 4,
+    "stock": 99,
+    "category": 4,
+    "thumbnail": "https://placehold.co/200x200?text=thumbnail",
+    "image": "https://placehold.co/800x800?text=image",
+    "title": "Produto 4",
+    "description": "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
+    "price": 4.99
+  },
+  {
+    "id": 5,
+    "stock": 99,
+    "category": 5,
+    "thumbnail": "https://placehold.co/200x200?text=thumbnail",
+    "image": "https://placehold.co/800x800?text=image",
+    "title": "Produto 5",
+    "description": "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
+    "price": 5.99
+  }
+]

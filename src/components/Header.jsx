@@ -3,13 +3,13 @@ import NavBar from "./NavBar";
 import Search from "./Search";
 import CartButton from "./CartButton";
 
-const Header = ({ menuItems, cartItems, updateCartItems }) => {
+const Header = () => {
   return (
     <header className="Header">
       <Logo />
-      <NavBar menuItems={menuItems} />
+      <NavBar />
       <Search />
-      <CartButton cartItems={cartItems} updateCartItems={updateCartItems} />
+      <CartButton />
     </header>
   );
 };

@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 import logo from "../assets/images/logo.svg";
 
 const Logo = () => {
   return (
-    <a href="/" title="Voltar para a Home" className="Logo">
+    <Link to="/" className="Logo" title="Home" >
       <img src={logo} alt="iDega" />
-    </a>
+    </Link>
   );
 };
 
