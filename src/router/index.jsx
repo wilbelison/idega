@@ -48,6 +48,7 @@ function Router() {
       image: "https://placehold.co/800x800?text=image",
       title: "Produto 0",
       slug: "produto-0",
+      details: "Mussum Ipsum",
       description:
         "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
       price: 0.99,
@@ -60,6 +61,7 @@ function Router() {
       image: "https://placehold.co/800x800?text=image",
       title: "Produto 1",
       slug: "produto-1",
+      details: "Mussum Ipsum",
       description:
         "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
       price: 1.99,
@@ -72,6 +74,7 @@ function Router() {
       image: "https://placehold.co/800x800?text=image",
       title: "Produto 2",
       slug: "produto-2",
+      details: "Mussum Ipsum",
       description:
         "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
       price: 2.99,
@@ -84,6 +87,7 @@ function Router() {
       image: "https://placehold.co/800x800?text=image",
       title: "Produto 3",
       slug: "produto-3",
+      details: "Mussum Ipsum",
       description:
         "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
       price: 3.99,
@@ -96,6 +100,7 @@ function Router() {
       image: "https://placehold.co/800x800?text=image",
       title: "Produto 4",
       slug: "produto-4",
+      details: "Mussum Ipsum",
       description:
         "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
       price: 4.99,
@@ -108,6 +113,7 @@ function Router() {
       image: "https://placehold.co/800x800?text=image",
       title: "Produto 5",
       slug: "produto-5",
+      details: "Mussum Ipsum",
       description:
         "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Cevadis im ampola pa arma uma pindureta. Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.",
       price: 5.99,

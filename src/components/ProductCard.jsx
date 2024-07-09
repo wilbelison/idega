@@ -3,15 +3,17 @@ import ProductCounter from "./ProductCounter";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="ProductCard">
-      <Link to={`/product/${product.id}`} className="card-link">
-        <img className="card-thumbnail" src={product.thumbnail} alt="" />
-        <h3 className="card-title">{product.title}</h3>
-        <p className="card-description">{product.description}</p>
-        <p className="card-price">{product.price}</p>
+    <li className="ProductCard">
+      <Link to={`/product/${product.slug}`} className="card-link">
+        <div class="card-thumbnail" style={{backgroundImage: `url(${product.thumbnail})`}}>
+          <div class="thumbnail-overlay"></div>
+          <ProductCounter productId={product.id} />
+        </div>
+        <span className="card-title">{product.title}</span>
+        <span className="card-details">{product.details}</span>
+        <span className="card-price">{product.price}</span>
       </Link>
-      <ProductCounter productId={product.id} />
-    </div>
+    </li>
   );
 };
 
