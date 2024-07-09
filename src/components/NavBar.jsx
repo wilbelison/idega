@@ -1,37 +1,48 @@
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-  const navItems = [
+  const categories = [
     {
-      title: "Ação e Aventura",
       id: 0,
+      title: "Cervejas",
+      slug: "cervejas",
     },
     {
-      title: "Luta e Esportes",
       id: 1,
+      title: "Vinhos",
+      slug: "vinhos",
     },
     {
-      title: "Plataforma",
       id: 2,
+      title: "Destilados",
+      slug: "destilados",
     },
     {
-      title: "Puzzle e Casual",
       id: 3,
+      title: "Não Alcóolicos",
+      slug: "nao-alcoolicos",
     },
     {
-      title: "RPG e Estratégia",
       id: 4,
+      title: "Tabacaria",
+      slug: "tabacaria",
     },
     {
-      title: "Mais Gêneros",
       id: 5,
+      title: "Snacks e outros",
+      slug: "snacks-e-outros",
     },
   ];
 
   return (
     <nav className="NavBar">
-      <ul className="nav-ul">
-        {navItems.map((item) => (
+      <ul>
+        <li>
+          <NavLink to="/" activeclassname="active">
+            Início
+          </NavLink>
+        </li>
+        {categories.map((item) => (
           <li key={item.id}>
             <NavLink to={`/category/${item.id}`} activeclassname="active">
               {item.title}

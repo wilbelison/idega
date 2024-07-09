@@ -1,18 +1,19 @@
 import iconCart from "../assets/images/icon-cart.svg";
 
 const CartButton = () => {
-
   const cartItems = [
     {
-      "id": 0,
-      "count": 1
+      id: 0,
+      count: 1,
+      price: 0.99,
     },
     {
-      "id": 1,
-      "count": 2
-    }
-  ]
-  
+      id: 1,
+      count: 2,
+      price: 1.99,
+    },
+  ];
+
   let numberOfItems = 0;
   let totalCost = 0.0;
 

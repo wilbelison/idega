@@ -1,6 +1,7 @@
 import Logo from "./Logo";
 import NavBar from "./NavBar";
 import Search from "./Search";
+// import LoginButton from "./LoginButton";
 import CartButton from "./CartButton";
 
 const Header = () => {
@@ -9,7 +10,10 @@ const Header = () => {
       <Logo />
       <NavBar />
       <Search />
-      <CartButton />
+      <div className="header-buttons">
+        {/* <LoginButton /> */}
+        <CartButton />
+      </div>
     </header>
   );
 };

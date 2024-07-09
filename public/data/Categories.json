@@ -1,26 +1,32 @@
 [
   {
-    "title": "Ação e Aventura",
-    "id": 0
+    "id": 0,
+    "title": "Cervejas",
+    "slug": "cervejas"
   },
   {
-    "title": "Luta e Esportes",
-    "id": 1
+    "id": 1,
+    "title": "Vinhos",
+    "slug": "vinhos"
   },
   {
-    "title": "Plataforma",
-    "id": 2
+    "id": 2,
+    "title": "Destilados",
+    "slug": "destilados"
   },
   {
-    "title": "Puzzle e Casual",
-    "id": 3
+    "id": 3,
+    "title": "Não Alcóolicos",
+    "slug": "nao-alcoolicos"
   },
   {
-    "title": "RPG e Estratégia",
-    "id": 4
+    "id": 4,
+    "title": "Tabacaria",
+    "slug": "tabacaria"
   },
   {
-    "title": "Mais Gêneros",
-    "id": 5
+    "id": 5,
+    "title": "Snacks e outros",
+    "slug": "snacks-e-outros"
   }
 ]

@@ -4,7 +4,7 @@ const Product = () => {
   const { productId } = useParams();
 
   return (
-    <main className="Cart">
+    <main className="Product">
       <h1>Product</h1>
       <h2>{productId}</h2>
     </main>
