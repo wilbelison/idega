@@ -273,11 +273,14 @@ main {
         transition: all 0.2s;
         background-color: #fff;
         &.active {
+          left: 8px;
+          right: 8px;
           border-radius: 8px;
           .button-remove {
             display: flex;
           }
           .counter {
+            margin: auto;
             display: inline-block;
           }
         }
@@ -303,7 +306,6 @@ main {
         }
         .counter {
           display: none;
-          margin: 0 auto;
           color: #3e3e3e;
           height: 30px;
           line-height: 32px;
