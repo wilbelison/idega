@@ -253,9 +253,13 @@ const Product = () => {
     <>
       <nav className="Breadcrumb">
         <ul>
-          <li className="breadcrumb-link"><Link to="/">Home</Link></li>
+          <li className="breadcrumb-link">
+            <Link to="/">Home</Link>
+          </li>
           <li className="breadcrumb-divider">/</li>
-          <li className="breadcrumb-link"><Link to="/category/cervejas">Cervejas</Link></li>
+          <li className="breadcrumb-link">
+            <Link to="/category/cervejas">Cervejas</Link>
+          </li>
         </ul>
       </nav>
       <main className="Product">
@@ -267,7 +271,12 @@ const Product = () => {
           <h1 className="product-title">{product.title}</h1>
           <span className="product-details">{product.details}</span>
           <span className="product-description">{product.description}</span>
-          <span className="product-price">{product.price}</span>
+          <span className="product-price">
+            {product.price.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </span>
           <button className="product-add">Adicionar</button>
         </div>
       </main>
