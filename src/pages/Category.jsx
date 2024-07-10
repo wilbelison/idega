@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 
 const Category = () => {
-  const { categoryId } = useParams();
+  const { categorySlug } = useParams();
 
   return (
     <main className="Cart">
       <h1>Category</h1>
-      <h2>{categoryId}</h2>
+      <h2>{categorySlug}</h2>
     </main>
   );
 };

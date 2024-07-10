@@ -289,8 +289,8 @@ function Router() {
         path="/"
         element={<Home categories={categories} catalog={catalog} />}
       />
-      <Route path="/category/:categoryId" element={<Category />} />
-      <Route path="/product/:productId" element={<Product />} />
+      <Route path="/category/:categorySlug" element={<Category />} />
+      <Route path="/product/:productSlug" element={<Product />} />
       <Route path="/cart" element={<Cart />} />
     </Routes>
   );
