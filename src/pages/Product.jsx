@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import Breadcrumb from "../components/Breadcrumb";
+import ProductDetails from "../components/ProductDetails";
 
 const catalog = [
   {
@@ -251,35 +252,8 @@ const Product = () => {
 
   return (
     <>
-      <nav className="Breadcrumb">
-        <ul>
-          <li className="breadcrumb-link">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="breadcrumb-divider">/</li>
-          <li className="breadcrumb-link">
-            <Link to="/category/cervejas">Cervejas</Link>
-          </li>
-        </ul>
-      </nav>
-      <main className="Product">
-        <div class="product-thumbnail">
-          <img src={product.image} alt="" />
-          <div class="thumbnail-overlay"></div>
-        </div>
-        <div class="product-infos">
-          <h1 className="product-title">{product.title}</h1>
-          <span className="product-details">{product.details}</span>
-          <span className="product-description">{product.description}</span>
-          <span className="product-price">
-            {product.price.toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            })}
-          </span>
-          <button className="product-add">Adicionar</button>
-        </div>
-      </main>
+      <Breadcrumb />
+      <ProductDetails product={product} />
     </>
   );
 };

@@ -351,9 +351,9 @@ main {
   }
 }
 
-/* Product */
+/* ProductDetails */
 
-.Product {
+.ProductDetails {
   width: 100%;
   max-width: 1180px;
   flex: none;
