@@ -4,12 +4,12 @@ const Home = ({ catalog }) => {
   return (
     <main className="Home">
       <h1 className="title">Home</h1>
-      {/* <div class="NavSlider">
+      {/* <div className="NavSlider">
         {items.map((categories) => {
           return <CategorieCard product={item} key={item.id} />;
         })}
       </div>
-      <div class="ItemsSlider">
+      <div className="ItemsSlider">
         {catalog.map((item) => {
           return <ProductCard product={item} key={item.id} />;
         })}
