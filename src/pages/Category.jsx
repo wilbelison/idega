@@ -4,7 +4,7 @@ const Category = () => {
   const { categorySlug } = useParams();
 
   return (
-    <main className="Cart">
+    <main className="Category">
       <h1>Category</h1>
       <h2>{categorySlug}</h2>
     </main>
