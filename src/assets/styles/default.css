@@ -169,12 +169,9 @@ button {
     border: 0;
     cursor: pointer;
     background-color: transparent;
-    &:hover {
-      background-color: #f7f7f7;
-    }
     .cart-info {
-      margin: 0 0 0 6px;
       color: #717171;
+      margin: 0 0 0 6px;
       transition: background-color 0.3s ease-in-out;
       white-space: nowrap;
       text-align: left;
@@ -187,6 +184,14 @@ button {
         font-size: 0.625rem;
         line-height: 0.75rem;
         display: block;
+      }
+    }
+    &.active,
+    &.active:hover {
+      color: #fff;
+      background-color: #ea1d2c;
+      .cart-info {
+        color: #fff;
       }
     }
   }
@@ -209,7 +214,7 @@ main {
     color: #3f3e3e;
     margin: 0 0 24px;
   }
-  .ItemsGrid {
+  .grid-items {
     padding: 0;
     display: flex;
     flex-flow: wrap;
@@ -455,6 +460,8 @@ main {
   }
 }
 
+/* Breadcrumb */
+
 .Breadcrumb {
   width: 100%;
   max-width: 1180px;
@@ -529,6 +536,56 @@ main {
           color: #3e3e3e;
         }
       }
+    }
+  }
+}
+
+/* ItemsSlider */
+
+.ItemsSlider {
+  position: relative;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .slider-wrapper {
+    position: relative;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+  .slider-items {
+    width: fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 30px;
+    padding: 0;
+  }
+  .slider-control {
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+    margin: auto 0;
+    width: 40px;
+    height: 40px;
+    top: calc(50% - 20px);
+    img {
+      width: 75%;
+      height: 75%;
+    }
+    &.left {
+      left: -20px;
+    }
+    &.right {
+      right: -20px;
     }
   }
 }
