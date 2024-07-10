@@ -8,12 +8,12 @@ const Home = ({ catalog }) => {
         {items.map((categories) => {
           return <CategorieCard product={item} key={item.id} />;
         })}
-      </div>
+      </div> */}
       <div className="ItemsSlider">
         {catalog.map((item) => {
           return <ProductCard product={item} key={item.id} />;
         })}
-      </div> */}
+      </div>
       <section className="Grid">
         <h2 className="subtitle">Products Grid</h2>
         <ul className="ItemsGrid">

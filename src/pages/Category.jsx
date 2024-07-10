@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
 
-const Category = () => {
+const Category = ({ categories }) => {
   const { categorySlug } = useParams();
+
+  const category = categories.filter((category) => category.slug === categorySlug)[0];
 
   return (
     <main className="Category">
-      <h1>Category</h1>
-      <h2>{categorySlug}</h2>
+      <h1 className="title">{category.title}</h1>
     </main>
   );
 };

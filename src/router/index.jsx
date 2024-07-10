@@ -289,7 +289,7 @@ function Router() {
         path="/"
         element={<Home categories={categories} catalog={catalog} />}
       />
-      <Route path="/category/:categorySlug" element={<Category />} />
+      <Route path="/category/:categorySlug" element={<Category categories={categories} />} />
       <Route path="/product/:productSlug" element={<Product />} />
       <Route path="/cart" element={<Cart />} />
     </Routes>
