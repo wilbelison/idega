@@ -15,10 +15,10 @@ const Home = ({ catalog }) => {
             })}
           </div>
         </div>
-        <button className="slider-control left" aria-label="Voltar">
+        <button className="slider-control left" aria-label="Voltar" disabled>
           <img src={iconLeft} alt="" />
         </button>
-        <button className="slider-control right" aria-label="Avançar">
+        <button className="slider-control right" aria-label="Avançar" disabled>
           <img src={iconRight} alt="" />
         </button>
       </section>
