@@ -4,10 +4,15 @@ const Product = () => {
   const { productId } = useParams();
 
   return (
-    <main className="Product">
+    <>
+    <aside className="ProductFilters">
+      <h3>Filtros</h3>
+    </aside>
+    <main className="ProductDetails">
       <h1>Product</h1>
       <h2>{productId}</h2>
     </main>
+    </>
   );
 };
 
