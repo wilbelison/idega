@@ -29,6 +29,7 @@ const ItemsSlider = ({ title, items }) => {
   }
 
   function goCurrentItem() {
+    const itemWidth = sliderRef.current.querySelector(".ProductCard").offsetWidth;
     const itemsLefts = () => {
       const lefts = [];
       sliderRef.current.querySelectorAll(".ProductCard").forEach((item) => {
@@ -38,7 +39,7 @@ const ItemsSlider = ({ title, items }) => {
       return lefts;
     };
     sliderRef.current.querySelector(".slider-wrapper").scrollLeft =
-      itemsLefts()[currentItem];
+      itemsLefts()[currentItem] + itemWidth;
   }
 
   return (
