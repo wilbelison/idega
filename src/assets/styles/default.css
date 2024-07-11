@@ -231,9 +231,13 @@ main {
   border-radius: 16px;
   background-color: #fff;
   transition: all 0.2s linear;
+  &.active {
+    background-color: #f2f2f2;
+  }
   &:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     transform: scale(1.02);
+    box-shadow: inset 0 0 0 2px #ea1d2c;
   }
   .card-link {
     position: relative;
@@ -554,6 +558,7 @@ main {
     scrollbar-width: none;
     margin-bottom: 30px;
     padding: 0;
+    scroll-behavior: smooth;
   }
   .slider-items {
     width: fit-content;

@@ -5,8 +5,8 @@ const Home = ({ catalog }) => {
   return (
     <main className="Home">
       <h1 className="title">Início</h1>
-      <ItemsSlider title="Items Slider" items={catalog} />
-      <ItemsGrid title="Items Grid" items={catalog} />
+      <ItemsSlider title="Cervejas" items={catalog} />
+      <ItemsGrid title="Mais Cervejas" items={catalog} />
     </main>
   );
 };

@@ -12,16 +12,16 @@ const cart = [
   },
 ];
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, active }) => {
   let productCount = 0;
-
   cart.forEach((item) => {
     if (item.id === parseInt(product.id)) {
       productCount = item.count;
     }
   });
+
   return (
-    <li className="ProductCard">
+    <li className={`ProductCard ${active}`}>
       <Link to={`/product/${product.slug}`} className="card-link">
         <div
           className="card-thumbnail"
