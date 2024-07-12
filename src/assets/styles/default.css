@@ -56,12 +56,14 @@ button {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin: 3px 5px;
     color: #ea1d2c;
     font-size: 24px;
     font-weight: 900;
     line-height: 40px;
     text-decoration: none;
+    img {
+      height: 30px;
+    }
   }
 
   /* NavBar */
