@@ -8,37 +8,37 @@ import Cart from "../pages/Cart";
 function Router() {
   const categories = [
     {
-      id: 0,
-      title: "Cervejas",
-      slug: "cervejas",
+      "id": 0,
+      "title": "Cervejas",
+      "slug": "cervejas"
     },
     {
-      id: 1,
-      title: "Vinhos",
-      slug: "vinhos",
+      "id": 1,
+      "title": "Vinhos",
+      "slug": "vinhos"
     },
     {
-      id: 2,
-      title: "Destilados",
-      slug: "destilados",
+      "id": 2,
+      "title": "Destilados",
+      "slug": "destilados"
     },
     {
-      id: 3,
-      title: "Não Alcóolicos",
-      slug: "nao-alcoolicos",
+      "id": 3,
+      "title": "Não Alcóolicos",
+      "slug": "nao-alcoolicos"
     },
     {
-      id: 4,
-      title: "Tabacaria",
-      slug: "tabacaria",
+      "id": 4,
+      "title": "Tabacaria",
+      "slug": "tabacaria"
     },
     {
-      id: 5,
-      title: "Snacks e outros",
-      slug: "snacks-e-outros",
-    },
-  ];
-
+      "id": 5,
+      "title": "Snacks e outros",
+      "slug": "snacks-e-outros"
+    }
+  ]
+  ;
   const catalog = [
     {
       id: 0,
@@ -137,7 +137,7 @@ function Router() {
       thumbnail:
         "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_Lata_IPA_350ml_4e611ac8bc.png",
       image:
-        "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_LN_Weizenbier_355ml_6330cadf72.png",
+        "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_Lata_IPA_350ml_4e611ac8bc.png",
       title: "Eisenbahn American IPA Lata 350ml",
       slug: "eisenbahn-american-ipa-lata-350ml",
       details: "Lata 350ml",
