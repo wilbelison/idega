@@ -6,6 +6,7 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  outline: none;
 }
 
 html,
@@ -233,9 +234,6 @@ main {
   border-radius: 16px;
   background-color: #fff;
   transition: all 0.2s linear;
-  &.active {
-    box-shadow: inset 0 0 0 2px #ea1d2c;
-  }
   &:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   }
