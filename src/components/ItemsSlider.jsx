@@ -3,7 +3,7 @@ import iconLeft from "../assets/images/icon-left.svg";
 import iconRight from "../assets/images/icon-right.svg";
 import ProductCard from "../components/ProductCard";
 
-const ItemsSlider = ({ title, items }) => {
+const ItemsSlider = ({ title, type, items }) => {
   const [currentItem, setCurrentItem] = useState(0);
   const sliderRef = useRef(null);
   const lastItem = items.length - 1;

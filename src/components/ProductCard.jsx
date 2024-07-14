@@ -14,9 +14,9 @@ const cart = [
 
 const ProductCard = ({ product, active }) => {
   let productCount = 0;
-  cart.forEach((item) => {
-    if (item.id === parseInt(product.id)) {
-      productCount = item.count;
+  cart.forEach((cartItem) => {
+    if (cartItem.id === parseInt(product.id)) {
+      productCount = cartItem.count;
     }
   });
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Data = () => {
+const Database = () => {
   const [Categories, setCategories] = useState([]);
   const [Catalog, setCatalog] = useState([]);
   const [Cart, setCart] = useState([]);
@@ -10,7 +10,7 @@ const Data = () => {
     if (localStorage.getItem("Categories")) {
       setCategories(JSON.parse(localStorage.getItem("Categories")));
     } else {
-      const url = "/data/Categories.json";
+      const url = "/database/Categories.json";
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -24,7 +24,7 @@ const Data = () => {
     if (localStorage.getItem("Catalog")) {
       setCatalog(JSON.parse(localStorage.getItem("Catalog")));
     } else {
-      const url = "/data/Catalog.json";
+      const url = "/database/Catalog.json";
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -38,7 +38,7 @@ const Data = () => {
     if (localStorage.getItem("Cart")) {
       setCart(JSON.parse(localStorage.getItem("Cart")));
     } else {
-      const url = "/data/Cart.json";
+      const url = "/database/Cart.json";
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -61,4 +61,4 @@ const Data = () => {
   };
 };
 
-export default Data;
+export default Database;
