@@ -10,36 +10,40 @@ const ItemsSlider = ({ title, type, items }) => {
 
   function goLeft() {
     if (currentItem >= -1) {
-      setCurrentItem(currentItem - 1);
-      if (currentItem <= 0) {
-        setCurrentItem(lastItem);
-      }
-      goCurrentItem();
+      goItem(currentItem - 1);
+    } else if (currentItem <= 0) {
+      goItem(lastItem);
     }
   }
 
   function goRight() {
     if (currentItem <= lastItem) {
-      setCurrentItem(currentItem + 1);
-      if (currentItem >= lastItem) {
-        setCurrentItem(0);
-      }
+      goItem(currentItem + 1);
+    } else if (currentItem >= lastItem) {
+      goItem(0);
     }
-    goCurrentItem();
   }
 
-  function goCurrentItem() {
-    const itemWidth = sliderRef.current.querySelector(".ProductCard").offsetWidth;
-    const itemsLefts = () => {
-      const lefts = [];
+  function goItem(index) {
+    setCurrentItem(index);
+
+    const itemsOffsets = () => {
+      const items = [];
       sliderRef.current.querySelectorAll(".ProductCard").forEach((item) => {
-        lefts.push(item.offsetLeft);
-        console.log(item.offsetLeft);
+        items.push([item.offsetLeft, item.offsetWidth]);
       });
-      return lefts;
+      return items;
     };
-    sliderRef.current.querySelector(".slider-wrapper").scrollLeft =
-      itemsLefts()[currentItem] + itemWidth;
+
+    const itemLeft = itemsOffsets()[currentItem][0];
+    const itemWidth = itemsOffsets()[currentItem][1];
+    const itemOffsett = itemLeft + itemWidth;
+
+    sliderRef.current.querySelector(".slider-wrapper").scrollLeft = itemOffsett;
+
+    console.log(itemLeft);
+    console.log(itemWidth);
+    console.log(itemOffsett);
   }
 
   return (
