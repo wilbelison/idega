@@ -1,18 +1,10 @@
 import { Link } from "react-router-dom";
 import ProductCounter from "./ProductCounter";
-
-const cart = [
-  {
-    id: 0,
-    count: 1,
-  },
-  {
-    id: 1,
-    count: 2,
-  },
-];
+import { useDatabase } from "../context/DatabaseContext";
 
 const ProductCard = ({ product, active }) => {
+  const { cart } = useDatabase();
+
   let productCount = 0;
   cart.forEach((cartItem) => {
     if (cartItem.id === parseInt(product.id)) {

@@ -3,7 +3,6 @@ import { useDatabase } from "../context/DatabaseContext";
 
 const NavBar = () => {
   const { categories } = useDatabase();
-  console.log(categories)
 
   return (
     <nav className="NavBar">

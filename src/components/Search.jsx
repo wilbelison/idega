@@ -3,16 +3,16 @@ import iconClear from "../assets/images/icon-clear.svg";
 
 const Search = () => {
   return (
-    <form className="Search">
+    <form className="Search" action="/search">
       <label htmlFor="search">
         <img src={iconSearch} alt="Busca" />
       </label>
       <input
         type="text"
         id="search"
-        name="search"
+        name="q"
         autoComplete="off"
-        placeholder="Busque por item ou loja"
+        placeholder="Busque por item ou marca"
         className="search-input"
       />
       <button className="search-clear">
