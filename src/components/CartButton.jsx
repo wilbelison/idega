@@ -1,36 +1,30 @@
+import { useDatabase } from "../context/DatabaseContext";
+
 import iconCart from "../assets/images/icon-cart.svg";
+import iconCartActive from "../assets/images/icon-cart-active.svg";
 
 const CartButton = () => {
-  const cartItems = [
-    {
-      id: 0,
-      count: 1,
-      price: 0.99,
-    },
-    {
-      id: 1,
-      count: 2,
-      price: 1.99,
-    },
-  ];
+
+  const { catalog,  cart } = useDatabase();
 
   let numberOfItems = 0;
   let totalCost = 0.0;
 
-  cartItems.forEach((item) => {
-    numberOfItems += item.count;
-    totalCost += item.count * item.price;
+  cart.forEach((cartItem) => {
+    numberOfItems += cartItem.count;
+    const catalogItem = catalog.filter((catalogItem) => cartItem.id === catalogItem.id)[0];
+    totalCost += cartItem.count * catalogItem.price;
   });
 
   return (
     <button
       title="Ir para a sacola"
-      className="CartButton"
+      className={`CartButton ${numberOfItems > 0 ? " active" : ""}`}
       onClick={() => {
         console.log("sacola");
       }}
     >
-      <img src={iconCart} alt="Sacola" className="icon-cart" />
+      <img src={numberOfItems > 0 ? iconCartActive : iconCart} alt="Sacola" className="icon-cart" />
       <p className="cart-info">
         <span className="cart-cost">
           {totalCost.toLocaleString("pt-BR", {
