@@ -696,3 +696,15 @@ main {
     }
   }
 }
+
+/* Loader */
+
+.Loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 72px;
+  color: #ea1d2c;
+}
