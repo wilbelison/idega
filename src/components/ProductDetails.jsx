@@ -1,3 +1,4 @@
+import Markdown from "react-markdown";
 import ProductCounter from "./ProductCounter";
 
 const ProductDetails = ({ product }) => {
@@ -10,7 +11,9 @@ const ProductDetails = ({ product }) => {
       <div className="product-infos">
         <h1 className="product-title">{product.title}</h1>
         <span className="product-details">{product.details}</span>
-        <span className="product-description">{product.description}</span>
+        <span className="product-description">
+          <Markdown>{product.description}</Markdown>
+        </span>
         <span className="product-price">
           {product.price.toLocaleString("pt-BR", {
             style: "currency",
