@@ -11,8 +11,14 @@ const ProductDetails = ({ product }) => {
       <div className="product-infos">
         <h1 className="product-title">{product.title}</h1>
         <span className="product-details">{product.details}</span>
-        <span className="product-description">
+        <span
+          className="product-description collapsed"
+          onClick={(e) => {
+            e.currentTarget.classList.remove("collapsed");
+          }}
+        >
           <Markdown>{product.description}</Markdown>
+          <span className="collapse">... Ver mais</span>
         </span>
         <span className="product-price">
           {product.price.toLocaleString("pt-BR", {

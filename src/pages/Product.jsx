@@ -1,21 +1,18 @@
 import { useParams } from "react-router-dom";
+import { useDatabase } from "../context/DatabaseContext";
+
 import Breadcrumb from "../components/Breadcrumb";
 import ProductDetails from "../components/ProductDetails";
-import { useDatabase } from "../context/DatabaseContext";
 
 const Product = () => {
   const { productSlug } = useParams();
+  const { catalog } = useDatabase();
 
-  const { categories, catalog } = useDatabase();
-
-  const product = catalog.filter((product) => product.slug === productSlug)[0];
-  const category = categories.filter(
-    (category) => product.category === category.id
-  )[0];
+  const product = catalog.filter((item) => item.slug === productSlug)[0];
 
   return (
     <>
-      <Breadcrumb category={category} />
+      <Breadcrumb product={product} />
       <ProductDetails product={product} />
     </>
   );

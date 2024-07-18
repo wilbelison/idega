@@ -28,7 +28,6 @@ const ProductCounter = ({ productId }) => {
         className="button-remove"
         onClick={(e) => {
           e.preventDefault();
-          console.log(counter, stock);
           if (counter > 0) setCounter(counter - 1);
         }}
       >
@@ -43,7 +42,6 @@ const ProductCounter = ({ productId }) => {
         className="button-add"
         onClick={(e) => {
           e.preventDefault();
-          console.log(counter, stock);
           if (counter) {
             if (stock > counter) {
               setCounter(counter + 1);

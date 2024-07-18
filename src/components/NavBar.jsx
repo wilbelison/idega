@@ -14,7 +14,7 @@ const NavBar = () => {
         </li>
         {categories.map((item) => (
           <li key={item.id}>
-            <NavLink to={`/category/${item.slug}`} activeclassname="active">
+            <NavLink to={`/categoria/${item.slug}`} activeclassname="active">
               {item.title}
             </NavLink>
           </li>

@@ -4,7 +4,7 @@ import ProductCounter from "./ProductCounter";
 const ProductCard = ({ product, active }) => {
   return (
     <li className={`ProductCard ${active}`}>
-      <Link to={`/product/${product.slug}`} className="card-link">
+      <Link to={`/produto/${product.slug}`} className="card-link">
         <div
           className="card-thumbnail"
           style={{ backgroundImage: `url(${product.thumbnail})` }}

@@ -16,12 +16,12 @@ function Router() {
         element={<Home />}
       />
       <Route
-        path="/category/:categorySlug"
+        path="/categoria/:categorySlug"
         element={<Category />}
       />
-      <Route path="/product/:productSlug" element={<Product />} />
-      <Route path="/search" element={<Search />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route path="/produto/:productSlug" element={<Product />} />
+      <Route path="/busca" element={<Search />} />
+      <Route path="/sacola" element={<Cart />} />
     </Routes>
   );
 }
