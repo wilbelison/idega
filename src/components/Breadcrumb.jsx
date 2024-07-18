@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Breadcrumb = () => {
+const Breadcrumb = ({ category }) => {
   return (
     <nav className="Breadcrumb">
       <ul>
@@ -9,7 +9,7 @@ const Breadcrumb = () => {
         </li>
         <li className="breadcrumb-divider">/</li>
         <li className="breadcrumb-link">
-          <Link to="/category/cervejas">Cervejas</Link>
+          <Link to={`/category/${category.slug}`}>{category.title}</Link>
         </li>
       </ul>
     </nav>

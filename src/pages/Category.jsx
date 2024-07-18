@@ -1,9 +1,13 @@
 import { useParams } from "react-router-dom";
+import { useDatabase } from "../context/DatabaseContext";
 
-const Category = ({ categories }) => {
+const Category = () => {
   const { categorySlug } = useParams();
+  const { categories } = useDatabase();
 
-  const category = categories.filter((category) => category.slug === categorySlug)[0];
+  const category = categories.filter(
+    (category) => category.slug === categorySlug
+  )[0];
 
   return (
     <main className="Category">

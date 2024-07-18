@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_LN_IPA_355ml_a113107819.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_LN_IPA_355ml_a113107819.png",
@@ -9,13 +9,13 @@
     "slug": "cerveja-eisenbahn-american-ipa-long-neck-355ml",
     "details": "Long Neck 355ml",
     "description": "Estilo: Ale Copo: Pint Amargor: 50 IBU Álcool: 6,9% ABV Temperatura: entre 5ºC e 8ºC Harmonização: Costelinha suína ao molho barbecue. Hambúrgueres, pizzas (calabresa, pepperoni, etc). Queijo parmesão, Roquefort, Gorgonzola e Gouda.",
-    "oldPrice": null,
-    "promoTitle": null,
-    "price": 4.99
+    "oldPrice": 4.99,
+    "promoTitle": "-20%",
+    "price": 3.99
   },
   {
     "id": 1,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_LN_Pilsen_355ml_8f1c99f728.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_LN_Pilsen_355ml_8f1c99f728.png",
@@ -29,7 +29,7 @@
   },
   {
     "id": 2,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_LN_Pale_Ale_355ml_0454541023.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_LN_Pale_Ale_355ml_0454541023.png",
@@ -43,7 +43,7 @@
   },
   {
     "id": 3,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_LN_IPA_355ml_63740f1794.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_LN_IPA_355ml_63740f1794.png",
@@ -57,7 +57,7 @@
   },
   {
     "id": 4,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_LN_Unfiltered_355ml_68f3f8f4d6.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_LN_Unfiltered_355ml_68f3f8f4d6.png",
@@ -71,7 +71,7 @@
   },
   {
     "id": 5,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_LN_Weizenbier_355ml_6330cadf72.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_LN_Weizenbier_355ml_6330cadf72.png",
@@ -85,7 +85,7 @@
   },
   {
     "id": 6,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_Lata_IPA_350ml_4e611ac8bc.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_Lata_IPA_350ml_4e611ac8bc.png",
@@ -99,7 +99,7 @@
   },
   {
     "id": 7,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_Lata_Pilsen_350ml_3bf2090e51.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_Lata_Pilsen_350ml_3bf2090e51.png",
@@ -113,7 +113,7 @@
   },
   {
     "id": 8,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_Lata_Pale_Ale_350ml_17dddeb715.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_Lata_Pale_Ale_350ml_17dddeb715.png",
@@ -127,7 +127,7 @@
   },
   {
     "id": 9,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_Lata_Session_IPA_350ml_9f59e40bac.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_Lata_Session_IPA_350ml_9f59e40bac.png",
@@ -141,7 +141,7 @@
   },
   {
     "id": 10,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Lata_Unfiltred_350_ml_55a9c838b6.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Lata_Unfiltred_350_ml_55a9c838b6.png",
@@ -155,7 +155,7 @@
   },
   {
     "id": 11,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_Lata_Pilsen_473ml_d31bacb010.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_Lata_Pilsen_473ml_d31bacb010.png",
@@ -169,7 +169,7 @@
   },
   {
     "id": 12,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_Lata_Unfiltered_473ml_8c8eafb82b_a94d243dd6.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_Lata_Unfiltered_473ml_8c8eafb82b_a94d243dd6.png",
@@ -183,7 +183,7 @@
   },
   {
     "id": 13,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_Garrafa_Pilsen_600ml_cfa0581cbb.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_Garrafa_Pilsen_600ml_cfa0581cbb.png",
@@ -197,7 +197,7 @@
   },
   {
     "id": 14,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_unfiltered_Garrafa_600ml_8756fb4f63.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/unfiltered_Garrafa_600ml_8756fb4f63.png",
@@ -211,7 +211,7 @@
   },
   {
     "id": 15,
-    "stock": 99,
+    "stock": 9,
     "category": 0,
     "thumbnail": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/thumbnail_Eisenbahn_Lata_269ml_f3d6afa2c1.png",
     "image": "https://hnk-banco-de-imagens-2022-production.s3.amazonaws.com/Eisenbahn_Lata_269ml_f3d6afa2c1.png",

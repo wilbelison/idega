@@ -1,3 +1,5 @@
+import ProductCounter from "./ProductCounter";
+
 const ProductDetails = ({ product }) => {
   return (
     <main className="ProductDetails">
@@ -15,7 +17,7 @@ const ProductDetails = ({ product }) => {
             currency: "BRL",
           })}
         </span>
-        <button className="product-add">Adicionar</button>
+        <ProductCounter productId={product.id} />
       </div>
     </main>
   );

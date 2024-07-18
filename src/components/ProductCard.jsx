@@ -1,17 +1,7 @@
 import { Link } from "react-router-dom";
 import ProductCounter from "./ProductCounter";
-import { useDatabase } from "../context/DatabaseContext";
 
 const ProductCard = ({ product, active }) => {
-  const { cart } = useDatabase();
-
-  let productCount = 0;
-  cart.forEach((cartItem) => {
-    if (cartItem.id === parseInt(product.id)) {
-      productCount = cartItem.count;
-    }
-  });
-
   return (
     <li className={`ProductCard ${active}`}>
       <Link to={`/product/${product.slug}`} className="card-link">
@@ -20,7 +10,7 @@ const ProductCard = ({ product, active }) => {
           style={{ backgroundImage: `url(${product.thumbnail})` }}
         >
           <div className="thumbnail-overlay"></div>
-          <ProductCounter productId={product.id} productCount={productCount} />
+          <ProductCounter productId={product.id} />
         </div>
         <span className="card-title">{product.title}</span>
         <span className="card-details">{product.details}</span>

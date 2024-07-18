@@ -225,6 +225,58 @@ main {
   }
 }
 
+/* ProductCounter */
+
+.ProductCounter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.2s;
+  border-radius: 8px;
+  border: 1px solid #f2f2f2;
+  .label {
+    display: none;
+  }
+  &.active {
+    border-radius: 8px;
+    .counter {
+      margin: auto;
+      display: inline-block;
+    }
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: #ea1d2c;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    transition: 0.2s;
+    position: relative;
+    overflow: hidden;
+    .label {
+      display: none;
+    }
+  }
+  .counter {
+    display: none;
+    color: #3e3e3e;
+    height: 30px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bolder;
+    margin: 3px 0;
+  }
+}
+
 .ProductCard {
   width: 160px;
   position: relative;
@@ -269,13 +321,9 @@ main {
         position: absolute;
         right: 8px;
         bottom: 8px;
-        display: flex;
-        align-items: center;
         border-radius: 50%;
         justify-content: flex-end;
         box-shadow: 0 1px 4px #00000014;
-        overflow: hidden;
-        transition: all 0.2s;
         background-color: #fff;
         &.active {
           left: 8px;
@@ -289,24 +337,8 @@ main {
             display: inline-block;
           }
         }
-        button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: none;
-          margin: 0;
-          padding: 0;
-          background: transparent;
-          color: #ea1d2c;
-          width: 40px;
-          height: 40px;
-          outline: none;
-          transition: 0.1s;
-          position: relative;
-          overflow: hidden;
-          &.button-remove {
-            display: none;
-          }
+        .button-remove {
+          display: none;
         }
         .counter {
           display: none;
@@ -435,28 +467,36 @@ main {
       margin-bottom: 16px;
       color: #3e3e3e;
     }
-    .product-add {
-      width: 100%;
-      margin: 0;
-      background: #ea1d2c;
-      color: #fff;
-      border: none;
-      padding: 0 20px;
-      border-radius: 4px;
-      height: 50px;
-      font-weight: 500;
-      transition: 0.1s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      font-family: inherit;
-      font-size: 100%;
-      line-height: 1.15;
-      font-weight: bolder;
-      &:hover {
-        background-color: #ee4c58;
+    .ProductCounter {
+
+      &:not(.active) .button-add .icon,
+      &:not(.active) .button-remove {
+        display: none;
+      }
+      &:not(.active) .button-add {
+        width: 100%;
+        background: #ea1d2c;
+        color: #fff;
+        border: none;
+        padding: 0 20px;
+        border-radius: 8px;
+        height: 50px;
+        font-weight: 500;
+        transition: 0.2s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        font-weight: bolder;
+        &:hover {
+          background-color: #ee4c58;
+        }
+      }
+      .counter {
+        height: 50px;
+        line-height: 50px;
       }
     }
   }
