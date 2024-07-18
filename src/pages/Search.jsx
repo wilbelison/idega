@@ -7,7 +7,7 @@ const Search = () => {
 
   return (
     <main className="Search">
-      <h1 className="title">Buscando por {query}</h1>
+      <h1 className="title">Busca por <span className="query">"{query}"</span></h1>
     </main>
   );
 };

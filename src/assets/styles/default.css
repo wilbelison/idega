@@ -686,3 +686,13 @@ main {
     }
   }
 }
+
+/* Search */
+
+.Search {
+  .title {
+    .query {
+      color: #ea1d2c;
+    }
+  }
+}

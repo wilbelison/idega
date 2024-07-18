@@ -3,7 +3,7 @@ import iconClear from "../assets/images/icon-clear.svg";
 
 const Search = () => {
   return (
-    <form className="Search" action="/search">
+    <form className="Search" action="/busca">
       <label htmlFor="search">
         <img src={iconSearch} alt="Busca" />
       </label>
