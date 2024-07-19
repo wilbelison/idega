@@ -10,10 +10,10 @@ export function DatabaseContextProvider({ children }) {
   useEffect(() => {
     async function setData(url, setStateFunction, localStorageName) {
 
-      // if (localStorage.getItem(localStorageName)) {
-      //   setStateFunction(JSON.parse(localStorage.getItem(localStorageName)));
-      // } else {
-        fetch(url)
+      if (localStorage.getItem(localStorageName)) {
+        setStateFunction(JSON.parse(localStorage.getItem(localStorageName)));
+      } else {
+        await fetch(url)
           .then((response) => response.json())
           .then((data) => {
             localStorage.setItem(localStorageName, JSON.stringify(data));
@@ -23,7 +23,7 @@ export function DatabaseContextProvider({ children }) {
             console.log(error);
           });
       }
-    // }
+    }
 
     /* sample data */
 

@@ -1,4 +1,7 @@
+import { useEffect, useState } from "react";
 import { useDatabase } from "../context/DatabaseContext";
+
+import Loader from "../components/Loader";
 
 import iconCart from "../assets/images/icon-cart.svg";
 import iconCartActive from "../assets/images/icon-cart-active.svg";
@@ -6,16 +9,24 @@ import iconCartActive from "../assets/images/icon-cart-active.svg";
 const CartButton = () => {
   const { catalog, cart } = useDatabase();
 
-  let numberOfItems = cart.length;
-  let totalCost = 0.0;
+  const [numberOfItems, setNumberOfItems] = useState(null);
+  const [totalCost, setTotalCost] = useState(null);
 
-  cart.forEach((cartItem) => {
-    numberOfItems += cartItem.count;
-    const catalogItem = catalog.filter(
-      (catalogItem) => cartItem.id === catalogItem.id
-    )[0];
-    totalCost += cartItem.count * catalogItem.price;
-  });
+  useEffect(() => {
+    let items = 0;
+    let total = 0.0;
+    cart.forEach((item) => {
+      items += item.count;
+      const findProduct = catalog.find((product) => item.id === product.id);
+      total += item.count * findProduct.price;
+    });
+    setNumberOfItems(items);
+    setTotalCost(total);
+  }, [catalog, cart]);
+
+  if (!numberOfItems) {
+    return <Loader />;
+  }
 
   return (
     <button

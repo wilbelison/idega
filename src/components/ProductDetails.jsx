@@ -18,7 +18,7 @@ const ProductDetails = ({ product }) => {
           }}
         >
           <Markdown>{product.description}</Markdown>
-          <span className="collapse">... Ver mais</span>
+          <span className="collapse">...ver mais</span>
         </span>
         <span className="product-price">
           {product.price.toLocaleString("pt-BR", {
