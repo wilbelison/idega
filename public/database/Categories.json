@@ -2,21 +2,25 @@
   {
     "id": 0,
     "title": "Cervejas",
-    "slug": "cervejas"
+    "slug": "cervejas",
+    "thumbnail": "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/Premium_bwJF.png?imwidth=256"
   },
   {
     "id": 1,
     "title": "Vinhos",
-    "slug": "vinhos"
+    "slug": "vinhos",
+    "thumbnail": "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/Vinhos_comw.png?imwidth=256"
   },
   {
     "id": 2,
     "title": "Destilados",
-    "slug": "destilados"
+    "slug": "destilados",
+    "thumbnail": "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/Destilados_YWEt.png?imwidth=256"
   },
   {
     "id": 3,
     "title": "Não Alcóolicos",
-    "slug": "nao-alcoolicos"
+    "slug": "nao-alcoolicos",
+    "thumbnail": "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/Semalcool_K1vV.png?imwidth=256"
   }
 ]
