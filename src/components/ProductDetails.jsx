@@ -4,7 +4,7 @@ import ProductCounter from "./ProductCounter";
 const ProductDetails = ({ product }) => {
   return (
     <main className="ProductDetails">
-      <div className="product-thumbnail">
+      <div className="product-image">
         <img src={product.image} alt="" />
         <div className="thumbnail-overlay"></div>
       </div>

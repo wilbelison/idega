@@ -278,6 +278,7 @@ main {
   background-color: #fff;
   &:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
   }
   .card-link {
     position: relative;
@@ -395,8 +396,8 @@ main {
   margin: 0 auto;
   background-color: #f2f2f2;
   border-radius: 10px;
-  .product-thumbnail {
-    height: 320px;
+  .product-image {
+    height: 360px;
     position: relative;
     border: none;
     background-size: contain;
@@ -407,6 +408,20 @@ main {
     background-position: center;
     background-color: #fff;
     align-items: flex-start;
+    border-radius: 8px;
+    cursor: zoom-in;
+    &.zoom,
+    &:hover {
+      cursor: zoom-out;
+      img {
+        margin: 0 auto;
+        transform: scale(1.5);
+        z-index: 999;
+        padding: 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        background-color: #fff;
+      }
+    }
     img {
       width: auto;
       height: auto;
