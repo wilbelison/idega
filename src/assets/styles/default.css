@@ -7,6 +7,7 @@
 *:after {
   box-sizing: border-box;
   outline: none;
+  transition: all 0.2s;
 }
 
 html,
@@ -119,7 +120,6 @@ button {
       font-size: 1rem;
       color: #717171;
       background-color: #f7f7f7;
-      outline: none;
       &::placeholder {
         color: #999;
       }
@@ -168,14 +168,12 @@ button {
     position: relative;
     padding: 8px 12px;
     border-radius: 200px;
-    transition: background-color 0.3s ease-in-out;
     border: 0;
     cursor: pointer;
     background-color: transparent;
     .cart-info {
       color: #717171;
       margin: 0 0 0 6px;
-      transition: background-color 0.3s ease-in-out;
       white-space: nowrap;
       text-align: left;
       .cart-cost {
@@ -233,7 +231,6 @@ main {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: all 0.2s;
   border-radius: 8px;
   border: 1px solid #f2f2f2;
   .label {
@@ -255,12 +252,6 @@ main {
     padding: 0;
     background: transparent;
     color: #ea1d2c;
-    width: 40px;
-    height: 40px;
-    outline: none;
-    transition: 0.2s;
-    position: relative;
-    overflow: hidden;
     .label {
       display: none;
     }
@@ -285,7 +276,6 @@ main {
   padding: 16px;
   border-radius: 16px;
   background-color: #fff;
-  transition: all 0.2s linear;
   &:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   }
@@ -325,11 +315,15 @@ main {
         justify-content: flex-end;
         box-shadow: 0 1px 4px #00000014;
         background-color: #fff;
+        button {
+          width: 40px;
+          height: 40px;
+        }
         &.active {
           left: 8px;
           right: 8px;
           border-radius: 8px;
-          .button-remove {
+          .remove {
             display: flex;
           }
           .counter {
@@ -337,7 +331,7 @@ main {
             display: inline-block;
           }
         }
-        .button-remove {
+        .remove {
           display: none;
         }
         .counter {
@@ -497,30 +491,28 @@ main {
       color: #3e3e3e;
     }
     .ProductCounter {
-      &:not(.active) .button-add .icon,
-      &:not(.active) .button-remove {
+      button {
+        width: 50px;
+        height: 50px;
+        font-size: 100%;
+      }
+      &:not(.active) .add .icon,
+      &:not(.active) .remove {
         display: none;
       }
-      &:not(.active) .button-add {
+      &:not(.active) .add {
         width: 100%;
-        background: #ea1d2c;
+        background-color: #ea1d2c;
         color: #fff;
         border: none;
         padding: 0 20px;
         border-radius: 8px;
-        height: 50px;
-        font-weight: 500;
-        transition: 0.2s;
+        font-weight: bolder;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         font-family: inherit;
-        font-size: 100%;
-        line-height: 1.15;
         font-weight: bolder;
-        &:hover {
-          background-color: #ee4c58;
-        }
       }
       .counter {
         height: 50px;
@@ -600,7 +592,6 @@ main {
         font-size: 1rem;
         line-height: 1.22;
         color: #717171;
-        transition: color 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         text-decoration: none;
         &:hover {
           color: #3e3e3e;
@@ -643,7 +634,6 @@ main {
     border: none;
     border-radius: 50%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-    transition: 0.3s;
     margin: auto 0;
     width: 40px;
     height: 40px;

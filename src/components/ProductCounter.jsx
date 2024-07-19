@@ -25,7 +25,7 @@ const ProductCounter = ({ productId }) => {
   return (
     <div className={`ProductCounter ${counter > 0 ? " active" : ""}`}>
       <button
-        className="button-remove"
+        className="remove"
         onClick={(e) => {
           e.preventDefault();
           if (counter > 0) setCounter(counter - 1);
@@ -39,7 +39,7 @@ const ProductCounter = ({ productId }) => {
       </button>
       <span className="counter">{counter}</span>
       <button
-        className="button-add"
+        className="add"
         onClick={(e) => {
           e.preventDefault();
           if (counter) {
@@ -51,8 +51,8 @@ const ProductCounter = ({ productId }) => {
           }
         }}
       >
-        <img className="button-add icon" src={iconAdd} alt="Adicionar" />
-        <span className="button-add label">Adicionar</span>
+        <img className="add icon" src={iconAdd} alt="Adicionar" />
+        <span className="add label">Adicionar</span>
       </button>
     </div>
   );
