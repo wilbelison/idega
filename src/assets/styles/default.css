@@ -714,7 +714,7 @@ main {
   color: #ea1d2c;
   background-color: #fff;
   .letter {
-    animation: flip 1s infinite;
+    animation: flip 5s infinite ease-in-out;
     &:nth-child(1) {
       animation-delay: 0.1s;
     }
@@ -745,6 +745,11 @@ main {
     &:nth-child(10) {
       animation-delay: 1s;
     }
+    &:nth-child(11),
+    &:nth-child(12),
+    &:nth-child(13) {
+      animation: flip-dots 1s infinite ease-in-out;
+    }
     &:nth-child(11) {
       animation-delay: 1.1s;
     }
@@ -758,6 +763,18 @@ main {
 }
 
 @keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  10% {
+    transform: rotateX(180deg);
+  }
+  20% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes flip-dots {
   0%,
   100% {
     transform: rotateX(0deg);
