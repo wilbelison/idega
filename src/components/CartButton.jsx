@@ -22,7 +22,7 @@ const CartButton = () => {
     });
     setNumberOfItems(items);
     setTotalCost(total);
-  }, [catalog, cart]);
+  }, [catalog, cart, numberOfItems, totalCost]);
 
   if (!numberOfItems) {
     return <Loader />;

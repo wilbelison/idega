@@ -12,7 +12,7 @@ const Header = () => {
       <Search />
       <div className="header-buttons">
         {/* <LoginButton /> */}
-        <CartButton />
+        {/* <CartButton /> */}
       </div>
     </header>
   );
