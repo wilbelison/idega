@@ -32,7 +32,6 @@ export function DatabaseContextProvider({ children }) {
   }, []);
 
   const setItemJSON = useCallback((item, data) => {
-    console.log(`Salvando ${item} no localStorage`, data);
     localStorage.setItem(item, JSON.stringify(data));
   }, []);
 
@@ -96,44 +95,50 @@ export function DatabaseContextProvider({ children }) {
 
   const setCartItemCount = useCallback(
     (id, count, itemDetails) => {
-      console.log(`Atualizando item ${id} com quantidade ${count}`);
       setCart((prevCart) => {
-        // Verifica se o item existe no carrinho
         const itemExists = prevCart.some((item) => item.id === id);
 
         let updatedCart;
 
         if (!itemExists) {
-          console.warn(
-            `Item com id ${id} não encontrado no carrinho. Criando novo item.`
-          );
-          // Adiciona o novo item com a quantidade especificada
           updatedCart = [...prevCart, { id, ...itemDetails, count }];
         } else {
-          // Atualiza a quantidade do item existente
           updatedCart = prevCart
             .map((item) => {
               if (item.id === id) {
-                return { ...item, count: count }; // Retorna uma cópia do item com a quantidade atualizada
+                return { ...item, count: count };
               }
-              return item; // Retorna o item sem alterações
+              return item;
             })
-            .filter((item) => item.count > 0); // Remove itens com quantidade zero
+            .filter((item) => item.count > 0);
         }
 
-        setItemJSON("cart", updatedCart); // Atualiza o localStorage
-        return updatedCart;
+        setItemJSON("cart", updatedCart);
       });
     },
     [setItemJSON]
   );
 
-  // Configura os dados iniciais do banco de dados
+  // Configura os dados iniciais do JSON ou Firebase
   useEffect(() => {
-    // puxando dados do firebase
+
     const itemsCollection = collection(db, "catalog");
     getDocs(itemsCollection).then((snapshot) => {
-      console.log(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      const firebaseCatalog = (snapshot.size !== 0) ? snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      })) : "Nenhum resultado encontrado";
+      console.log(firebaseCatalog);
+    });
+
+    const queryCollection = query(collection(db, "catalog"), where("id", "==", 3), limit(1)); 
+
+    getDocs(queryCollection).then((snapshot) => {
+      const firebaseCatalog = (snapshot.size !== 0) ? snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      })) : "Nenhum resultado encontrado";
+      console.log(firebaseCatalog);
     });
 
     const setInitialData = async (
