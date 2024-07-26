@@ -22,11 +22,7 @@ const CartButton = () => {
     });
     setNumberOfItems(items);
     setTotalCost(total);
-  }, [catalog, cart]);
-
-  if (!numberOfItems) {
-    return <Loader />;
-  }
+  }, [catalog, cart, numberOfItems, totalCost]);
 
   return (
     <button
