@@ -5,6 +5,18 @@ import React, {
   createContext,
   useCallback,
 } from "react";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  collection,
+  getDocs,
+  addDoc,
+  query,
+  where,
+  limit,
+} from "firebase/firestore";
+import db from "../services/firebase";
 
 const DatabaseContext = createContext();
 
@@ -118,6 +130,12 @@ export function DatabaseContextProvider({ children }) {
 
   // Configura os dados iniciais do banco de dados
   useEffect(() => {
+    // puxando dados do firebase
+    const itemsCollection = collection(db, "catalog");
+    getDocs(itemsCollection).then((snapshot) => {
+      console.log(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    });
+
     const setInitialData = async (
       JSONurl,
       setStateFunction,
