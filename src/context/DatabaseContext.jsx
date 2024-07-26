@@ -83,25 +83,31 @@ export function DatabaseContextProvider({ children }) {
   );
 
   const setCartItemCount = useCallback(
-    (id, count) => {
+    (id, count, itemDetails) => {
       console.log(`Atualizando item ${id} com quantidade ${count}`);
       setCart((prevCart) => {
         // Verifica se o item existe no carrinho
         const itemExists = prevCart.some((item) => item.id === id);
 
-        if (!itemExists) {
-          console.warn(`Item com id ${id} não encontrado no carrinho.`);
-          return prevCart;
-        }
+        let updatedCart;
 
-        const updatedCart = prevCart
-          .map((item) => {
-            if (item.id === id) {
-              return { ...item, count: count }; // Retorna uma cópia do item com a quantidade atualizada
-            }
-            return item; // Retorna o item sem alterações
-          })
-          .filter((item) => item.count > 0); // Remove itens com quantidade zero
+        if (!itemExists) {
+          console.warn(
+            `Item com id ${id} não encontrado no carrinho. Criando novo item.`
+          );
+          // Adiciona o novo item com a quantidade especificada
+          updatedCart = [...prevCart, { id, ...itemDetails, count }];
+        } else {
+          // Atualiza a quantidade do item existente
+          updatedCart = prevCart
+            .map((item) => {
+              if (item.id === id) {
+                return { ...item, count: count }; // Retorna uma cópia do item com a quantidade atualizada
+              }
+              return item; // Retorna o item sem alterações
+            })
+            .filter((item) => item.count > 0); // Remove itens com quantidade zero
+        }
 
         setItemJSON("cart", updatedCart); // Atualiza o localStorage
         return updatedCart;

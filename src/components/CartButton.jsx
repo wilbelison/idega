@@ -24,10 +24,6 @@ const CartButton = () => {
     setTotalCost(total);
   }, [catalog, cart, numberOfItems, totalCost]);
 
-  if (!numberOfItems) {
-    return <Loader />;
-  }
-
   return (
     <button
       title="Abrir sacola de compras"
