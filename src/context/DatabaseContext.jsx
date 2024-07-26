@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
+import db from "../services/firebase";
 
 const DatabaseContext = createContext();
 
@@ -9,7 +10,6 @@ export function DatabaseContextProvider({ children }) {
 
   useEffect(() => {
     async function setData(url, setStateFunction, localStorageName) {
-
       if (localStorage.getItem(localStorageName)) {
         setStateFunction(JSON.parse(localStorage.getItem(localStorageName)));
       } else {
