@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+import { useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -11,11 +11,7 @@ import {
   where,
   limit,
 } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyATyEtGkCx4ZuftTLgdZsSpOzxkdZca9ko",
   authDomain: "idega-8c3d0.firebaseapp.com",
@@ -23,15 +19,13 @@ const firebaseConfig = {
   storageBucket: "idega-8c3d0.appspot.com",
   messagingSenderId: "744998339841",
   appId: "1:744998339841:web:f6ec94c1211a601a850700",
+  measurementId: "G-C7W72SH0SK",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 export default db;
-
-console.log("firebase");
 
 // populando data
 

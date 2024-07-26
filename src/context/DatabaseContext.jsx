@@ -1,4 +1,15 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  collection,
+  getDocs,
+  addDoc,
+  query,
+  where,
+  limit,
+} from "firebase/firestore";
 import db from "../services/firebase";
 
 const DatabaseContext = createContext();
@@ -9,6 +20,12 @@ export function DatabaseContextProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
+    // puxando dados do firebase
+    const itemsCollection = collection(db, "catalog");
+    getDocs(itemsCollection).then((snapshot) => {
+      console.log(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    });
+
     async function setData(url, setStateFunction, localStorageName) {
       if (localStorage.getItem(localStorageName)) {
         setStateFunction(JSON.parse(localStorage.getItem(localStorageName)));
