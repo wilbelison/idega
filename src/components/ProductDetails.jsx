@@ -1,12 +1,15 @@
+import { useState } from "react";
 import Markdown from "react-markdown";
 import ProductCounter from "./ProductCounter";
 
 const ProductDetails = ({ product }) => {
+  const [zoom, setZoom] = useState(false);
+
   return (
     <main className="ProductDetails">
-      <div className="product-image">
+      <div className={`product-image ${zoom ? "zoom" : ""}`} onClick={() => setZoom(!zoom)}>
         <img src={product.image} alt="" />
-        <div className="thumbnail-overlay"></div>
+        <div className="image-overlay"></div>
       </div>
       <div className="product-infos">
         <h1 className="product-title">{product.title}</h1>
@@ -26,6 +29,7 @@ const ProductDetails = ({ product }) => {
             currency: "BRL",
           })}
         </span>
+        <span className="divider"></span>
         <ProductCounter productId={product.id} />
       </div>
     </main>
