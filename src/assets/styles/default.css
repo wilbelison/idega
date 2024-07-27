@@ -857,7 +857,7 @@ main {
           text-decoration: none;
           color: #3f3e3e;
           line-height: 1.4;
-          margin: 0 auto;
+          margin: 0 16px;
         }
         .price {
           float: right;
@@ -871,7 +871,6 @@ main {
       }
       .ProductCounter {
         width: 100px;
-        margin: 0 8px;
       }
       .total {
         line-height: 42px;

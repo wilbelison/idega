@@ -4,10 +4,10 @@ import ProductCounter from "./ProductCounter";
 const ProductRow = ({ product }) => {
   return (
     <li className="ProductRow">
+      <ProductCounter productId={product.id} />
       <Link to={`/produto/${product.slug}`} className="title">
         {product.title}
       </Link>
-      <ProductCounter productId={product.id} />
       <span className="price">
         {product.price.toLocaleString("pt-BR", {
           style: "currency",
