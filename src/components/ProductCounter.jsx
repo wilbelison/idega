@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useDatabase } from "../context/DatabaseContext";
 
+import Loader from "../components/Loader";
+
 import iconRemove from "../assets/images/icon-remove.svg";
 import iconTrash from "../assets/images/icon-trash.svg";
 import iconAdd from "../assets/images/icon-add.svg";
@@ -18,13 +20,17 @@ const ProductCounter = ({ productId }) => {
     if (cartItem) {
       setCounter(cartItem.count);
     } else {
-      setCounter(0); // Reseta o contador para zero se o item não estiver no carrinho
+      setCounter(0);
     }
 
     if (catalogItem) {
       setStock(catalogItem.stock);
     }
-  }, [catalog, cart, productId]);
+  }, [catalog, cart, counter, stock, productId]);
+
+  if (counter === null) {
+    return <Loader />;
+  }
 
   const handleRemove = (e) => {
     e.preventDefault();

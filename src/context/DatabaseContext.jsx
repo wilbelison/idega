@@ -25,6 +25,7 @@ export function DatabaseContextProvider({ children }) {
   const [brands, setBrands] = useState([]);
   const [catalog, setCatalog] = useState([]);
   const [cart, setCart] = useState([]);
+  const [cartView, setCartView] = useState(false);
 
   // Funções utilitárias de JSON e localStorage
   const getItemJSON = useCallback((item) => {
@@ -86,6 +87,10 @@ export function DatabaseContextProvider({ children }) {
   );
 
   // Funções do carrinho
+  const toggleCartView = () => {
+    setCartView(!cartView);
+  };
+
   const getCartItemById = useCallback(
     (id) => {
       return findByProperty(cart, "id", id);
@@ -121,23 +126,32 @@ export function DatabaseContextProvider({ children }) {
 
   // Configura os dados iniciais do JSON ou Firebase
   useEffect(() => {
-
     const itemsCollection = collection(db, "catalog");
     getDocs(itemsCollection).then((snapshot) => {
-      const firebaseCatalog = (snapshot.size !== 0) ? snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      })) : "Nenhum resultado encontrado";
+      const firebaseCatalog =
+        snapshot.size !== 0
+          ? snapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }))
+          : "Nenhum resultado encontrado";
       console.log(firebaseCatalog);
     });
 
-    const queryCollection = query(collection(db, "catalog"), where("id", "==", 3), limit(1)); 
+    const queryCollection = query(
+      collection(db, "catalog"),
+      where("id", "==", 3),
+      limit(1)
+    );
 
     getDocs(queryCollection).then((snapshot) => {
-      const firebaseCatalog = (snapshot.size !== 0) ? snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      })) : "Nenhum resultado encontrado";
+      const firebaseCatalog =
+        snapshot.size !== 0
+          ? snapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }))
+          : "Nenhum resultado encontrado";
       console.log(firebaseCatalog);
     });
 
@@ -165,7 +179,7 @@ export function DatabaseContextProvider({ children }) {
     setInitialData("/database/Brands.json", setBrands, "brands");
     setInitialData("/database/Catalog.json", setCatalog, "catalog");
     setInitialData("/database/Cart.json", setCart, "cart");
-  }, [getItemJSON, setItemJSON]);
+  }, [setItemJSON]);
 
   return (
     <DatabaseContext.Provider
@@ -174,6 +188,8 @@ export function DatabaseContextProvider({ children }) {
         brands,
         catalog,
         cart,
+        cartView,
+        toggleCartView,
         getCategoryById,
         getCategoryBySlug,
         getBrandById,

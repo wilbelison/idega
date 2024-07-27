@@ -7,7 +7,7 @@ import iconCart from "../assets/images/icon-cart.svg";
 import iconCartActive from "../assets/images/icon-cart-active.svg";
 
 const CartButton = () => {
-  const { catalog, cart } = useDatabase();
+  const { catalog, cart, toggleCartView } = useDatabase();
 
   const [numberOfItems, setNumberOfItems] = useState(null);
   const [totalCost, setTotalCost] = useState(null);
@@ -15,11 +15,13 @@ const CartButton = () => {
   useEffect(() => {
     let items = 0;
     let total = 0.0;
-    cart.forEach((item) => {
-      items += item.count;
-      const findProduct = catalog.find((product) => item.id === product.id);
-      total += item.count * findProduct.price;
-    });
+    if (numberOfItems !== null) {
+      cart.forEach((item) => {
+        items += item.count;
+        const findProduct = catalog.find((product) => item.id === product.id);
+        total += item.count * findProduct.price;
+      });
+    }
     setNumberOfItems(items);
     setTotalCost(total);
   }, [catalog, cart, numberOfItems]);
@@ -32,9 +34,7 @@ const CartButton = () => {
     <button
       title="Abrir sacola de compras"
       className={`CartButton ${numberOfItems > 0 ? " active" : ""}`}
-      onClick={() => {
-        console.log("Abrir sacola de compras");
-      }}
+      onClick={toggleCartView}
     >
       <img
         src={numberOfItems > 0 ? iconCartActive : iconCart}

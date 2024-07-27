@@ -33,5 +33,5 @@ export default db;
 
 // catalog.forEach(async (obj) => {
 //   const docRef = await addDoc(collection(db, "catalog"), obj);
-//   console.log("Document written with ID: ", docRef.id);
+//   console.log("Documento adicionado com ID: ", docRef.id);
 // });
