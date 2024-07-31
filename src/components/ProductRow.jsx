@@ -4,7 +4,7 @@ import ProductCounter from "./ProductCounter";
 const ProductRow = ({ product }) => {
   return (
     <li className="ProductRow">
-      <ProductCounter productId={product.id} />
+      <ProductCounter product={product} />
       <Link to={`/produto/${product.slug}`} className="title">
         {product.title}
       </Link>

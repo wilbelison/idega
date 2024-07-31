@@ -30,7 +30,7 @@ const ProductDetails = ({ product }) => {
           })}
         </span>
         <span className="divider"></span>
-        <ProductCounter productId={product.id} />
+        <ProductCounter product={product} />
       </div>
     </main>
   );

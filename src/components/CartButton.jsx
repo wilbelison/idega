@@ -7,49 +7,39 @@ import iconCart from "../assets/images/icon-cart.svg";
 import iconCartActive from "../assets/images/icon-cart-active.svg";
 
 const CartButton = () => {
-  const { catalog, cart, toggleCartView } = useDatabase();
-
-  const [numberOfItems, setNumberOfItems] = useState(null);
-  const [totalCost, setTotalCost] = useState(null);
+  const { cart, toggleCartView } = useDatabase([]);
+  const [count, setCount] = useState(0);
+  const [price, setPrice] = useState(0.0);
 
   useEffect(() => {
-    let items = 0;
-    let total = 0.0;
-    if (numberOfItems !== null) {
-      cart.forEach((item) => {
-        items += item.count;
-        const findProduct = catalog.find((product) => item.id === product.id);
-        total += item.count * findProduct.price;
-      });
-    }
-    setNumberOfItems(items);
-    setTotalCost(total);
-  }, [catalog, cart, numberOfItems]);
+    setCount(cart.total.count);
+    setPrice(cart.total.price);
+  }, [cart]);
 
-  if (numberOfItems === null) {
+  if (cart === null) {
     return <Loader />;
   }
 
   return (
     <button
       title="Abrir sacola de compras"
-      className={`CartButton ${numberOfItems > 0 ? " active" : ""}`}
+      className={`CartButton ${count > 0 ? " active" : ""}`}
       onClick={toggleCartView}
     >
       <img
-        src={numberOfItems > 0 ? iconCartActive : iconCart}
-        alt="Sacola"
+        src={count > 0 ? iconCartActive : iconCart}
+        alt="Sacola de compras"
         className="icon-cart"
       />
       <p className="cart-info">
         <span className="cart-cost">
-          {totalCost.toLocaleString("pt-BR", {
+          {price.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL",
           })}
         </span>
         <span className="cart-items">
-          {numberOfItems === 1 ? "1 item" : numberOfItems + " itens"}
+          {count === 1 ? "1 item" : count + " itens"}
         </span>
       </p>
     </button>

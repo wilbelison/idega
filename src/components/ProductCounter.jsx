@@ -7,65 +7,71 @@ import iconRemove from "../assets/images/icon-remove.svg";
 import iconTrash from "../assets/images/icon-trash.svg";
 import iconAdd from "../assets/images/icon-add.svg";
 
-const ProductCounter = ({ productId }) => {
-  const { catalog, cart, setCartItemCount } = useDatabase();
+const ProductCounter = ({ product }) => {
+  const { cart, updateCart } = useDatabase();
 
-  const [counter, setCounter] = useState(0);
-  const [stock, setStock] = useState(0);
+  // Initialize counter based on cart item if exists, otherwise 0
+  const initialCounter = cart.items.find(item => item.id === product.id)?.count || 0;
+  const [counter, setCounter] = useState(initialCounter);
 
+  // Set stock from product directly
+  const [stock, setStock] = useState(product.stock);
+
+  // Sync counter with cart items
   useEffect(() => {
-    const catalogItem = catalog.find((item) => item.id === productId);
-    const cartItem = cart.find((item) => item.id === productId);
-
-    if (cartItem) {
-      setCounter(cartItem.count);
-    } else {
-      setCounter(0);
+    const item = cart.items.find(item => item.id === product.id);
+    if (item) {
+      setCounter(item.count);
     }
+  }, [cart, product.id]);
 
-    if (catalogItem) {
-      setStock(catalogItem.stock);
-    }
-  }, [catalog, cart, counter, stock, productId]);
-
-  if (counter === null) {
+  // Handle loading state
+  if (!cart) {
     return <Loader />;
   }
 
   const handleRemove = (e) => {
     e.preventDefault();
+    console.log("remove");
     if (counter > 0) {
       const newCount = counter - 1;
       setCounter(newCount);
-      setCartItemCount(productId, newCount);
+      updateCart(product, newCount);
     }
   };
 
   const handleAdd = (e) => {
     e.preventDefault();
+    console.log("add");
     if (stock > counter) {
       const newCount = counter + 1;
       setCounter(newCount);
-      setCartItemCount(productId, newCount);
+      updateCart(product, newCount);
     }
   };
 
   return (
-    <div className={`ProductCounter ${counter > 0 ? " active" : ""}`}>
+    <div className={`ProductCounter ${counter > 0 ? "active" : ""}`}>
       <button
         className="remove"
         onClick={handleRemove}
         disabled={counter === 0}
+        aria-label="Remover item"
       >
         <img
           className="icon-remove"
           src={counter === 1 ? iconTrash : iconRemove}
-          alt="Remover"
+          alt={counter === 1 ? "Remover item" : "Diminuir quantidade"}
         />
       </button>
       <span className="counter">{counter}</span>
-      <button className="add" onClick={handleAdd} disabled={counter >= stock}>
-        <img className="add icon" src={iconAdd} alt="Adicionar" />
+      <button
+        className="add"
+        onClick={handleAdd}
+        disabled={counter >= stock}
+        aria-label="Adicionar item"
+      >
+        <img className="add icon" src={iconAdd} alt="Adicionar item" />
         <span className="add label">Adicionar</span>
       </button>
     </div>

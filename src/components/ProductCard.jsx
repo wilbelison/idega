@@ -10,7 +10,7 @@ const ProductCard = ({ product, active }) => {
           style={{ backgroundImage: `url(${product.thumbnail})` }}
         >
           <div className="thumbnail-overlay"></div>
-          <ProductCounter productId={product.id} />
+          <ProductCounter product={product} />
         </div>
         <span className="card-title">{product.title}</span>
         <span className="card-details">{product.details}</span>

@@ -824,7 +824,7 @@ main {
   overflow-y: auto;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  animation: slide-out-to-right 0.5s forwards;
+  /* animation: slide-out-to-right 0.5s forwards; */
   &.open {
     animation: slide-in-from-right 0.5s forwards;
   }
@@ -838,26 +838,30 @@ main {
   }
   .ItemsList {
     padding: 0 40px;
-    .subtitle {
-      margin-bottom: 0;
-    }
     .items {
       display: flex;
       flex-direction: column;
       padding: 0;
       margin: 0;
       .ProductRow {
-        padding: 16px 0;
         margin: 0;
+        padding: 0;
+        margin-top: 16px;
+        padding-top: 16px;
         list-style: none;
         display: flex;
         flex-direction: row;
         border-top: solid 1px #f2f2f2;
+        align-items: center;
         .title {
-          text-decoration: none;
           color: #3f3e3e;
           line-height: 1.4;
-          margin: 0 16px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;
+          max-height: 42px;
+          text-decoration: none;
+          width: 100%;
         }
         .price {
           float: right;
@@ -870,7 +874,12 @@ main {
         }
       }
       .ProductCounter {
-        width: 100px;
+        margin-right: 16px;
+        display: none;
+        width: 140px;
+        &.active {
+          display: flex;
+        }
       }
       .total {
         line-height: 42px;
