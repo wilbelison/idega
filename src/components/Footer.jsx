@@ -4,58 +4,16 @@ const Footer = () => {
   return (
     <footer className="Footer">
       <div className="footer-colum">
-        <h3 className="title">Colum Title</h3>
+        <h3 className="title">Wil's links</h3>
         <ul>
           <li>
-            <Link to="/">Link 1</Link>
+            <Link to="https://www.linkedin.com/in/wilbelison/">LinkedIn</Link>
           </li>
           <li>
-            <Link to="/">Link 2</Link>
+            <Link to="https://github.com/wilbelison">Github</Link>
           </li>
           <li>
-            <Link to="/">Link 3</Link>
-          </li>
-        </ul>
-      </div>
-      <div className="footer-colum">
-        <h3 className="title">Colum Title</h3>
-        <ul>
-          <li>
-            <Link to="/">Link 1</Link>
-          </li>
-          <li>
-            <Link to="/">Link 2</Link>
-          </li>
-          <li>
-            <Link to="/">Link 3</Link>
-          </li>
-        </ul>
-      </div>
-      <div className="footer-colum">
-        <h3 className="title">Colum Title</h3>
-        <ul>
-          <li>
-            <Link to="/">Link 1</Link>
-          </li>
-          <li>
-            <Link to="/">Link 2</Link>
-          </li>
-          <li>
-            <Link to="/">Link 3</Link>
-          </li>
-        </ul>
-      </div>
-      <div className="footer-colum">
-        <h3 className="title">Colum Title</h3>
-        <ul>
-          <li>
-            <Link to="/">Link 1</Link>
-          </li>
-          <li>
-            <Link to="/">Link 2</Link>
-          </li>
-          <li>
-            <Link to="/">Link 3</Link>
+            <Link to="https://wil.work">Portfólio</Link>
           </li>
         </ul>
       </div>
