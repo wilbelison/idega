@@ -9,7 +9,7 @@ const ProductRow = ({ product }) => {
         {product.title}
       </Link>
       <span className="price">
-        {product.price.toLocaleString("pt-BR", {
+        {(product.price * product.count).toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL",
         })}

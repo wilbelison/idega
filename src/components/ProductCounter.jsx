@@ -23,7 +23,7 @@ const ProductCounter = ({ product }) => {
     if (item) {
       setCounter(item.count);
     }
-  }, [cart, product.id]);
+  }, [cart, product]);
 
   // Handle loading state
   if (!cart) {

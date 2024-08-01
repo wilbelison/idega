@@ -824,7 +824,12 @@ main {
   overflow-y: auto;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* animation: slide-out-to-right 0.5s forwards; */
+  animation: slide-out-to-right 0.2s forwards;
+  &.empty {
+    .checkout-info {
+      display: none;
+    }
+  }
   &.open {
     animation: slide-in-from-right 0.5s forwards;
   }
