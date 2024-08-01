@@ -9,15 +9,10 @@ import iconAdd from "../assets/images/icon-add.svg";
 
 const ProductCounter = ({ product }) => {
   const { cart, updateCart } = useDatabase();
-
-  // Initialize counter based on cart item if exists, otherwise 0
   const initialCounter = cart.items.find(item => item.id === product.id)?.count || 0;
   const [counter, setCounter] = useState(initialCounter);
-
-  // Set stock from product directly
   const [stock, setStock] = useState(product.stock);
 
-  // Sync counter with cart items
   useEffect(() => {
     const item = cart.items.find(item => item.id === product.id);
     if (item) {
@@ -25,7 +20,6 @@ const ProductCounter = ({ product }) => {
     }
   }, [cart, product]);
 
-  // Handle loading state
   if (!cart) {
     return <Loader />;
   }

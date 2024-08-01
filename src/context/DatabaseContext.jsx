@@ -31,25 +31,20 @@ export function DatabaseContextProvider({ children }) {
     setCartView(!cartView);
   };
 
-  function updateCart(product, count) {
+  const updateCart = useCallback((product, count) => {
     let newItems = [...cart.items];
     const itemIndex = newItems.findIndex((item) => item.id === product.id);
 
     if (itemIndex !== -1) {
-      // Item exists in the cart
       if (count <= 0) {
-        // Remove the item if count is less than or equal to 0
         newItems.splice(itemIndex, 1);
       } else {
-        // Update the count of the existing item
         newItems[itemIndex].count = count;
       }
     } else if (count > 0) {
-      // Add new item to the cart if count is greater than 0
       newItems.push({ ...product, count });
     }
 
-    // Calculate the new totals using reduce
     const newTotal = newItems.reduce(
       (acc, item) => {
         acc.count += item.count;
@@ -59,7 +54,6 @@ export function DatabaseContextProvider({ children }) {
       { count: 0, price: 0 }
     );
 
-    // Update the state with the new cart items and totals
     setCart({
       items: newItems,
       total: newTotal,
@@ -69,7 +63,7 @@ export function DatabaseContextProvider({ children }) {
       items: newItems,
       total: newTotal,
     });
-  }
+  }, [cart]);
 
   useEffect(() => {
     const firebaseCatalog = collection(db, "catalog");
