@@ -19,7 +19,7 @@ const CartView = () => {
         <img src={iconClose} className="icon-close" alt="Fechar sacola" />
       </button>
       <ItemsList
-        title={`Sacola de compras ${cart.items.length > 0 ? "" : "vazia"}`}
+        title={`Sacola de compras ${cart.items.length > 0 ? "" : "vazia :("}`}
         type="products"
         items={cart.items}
       />

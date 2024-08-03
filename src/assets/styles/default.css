@@ -259,6 +259,9 @@ main {
     padding: 0;
     background: transparent;
     color: #ea1d2c;
+    &[disabled] {
+      opacity: 0.2;
+    }
     .label {
       display: none;
     }
@@ -841,97 +844,107 @@ main {
     background-color: transparent;
     margin: 0;
   }
-  .ItemsList {
-    padding: 0 40px;
-    .items {
-      display: flex;
-      flex-direction: column;
-      padding: 0;
+}
+.ItemsList {
+  padding: 0 40px;
+  .subtitle {
+    font-size: 1.125rem;
+  }
+  .items {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    .ProductRow {
       margin: 0;
-      .ProductRow {
+      padding: 0;
+      margin-top: 16px;
+      padding-top: 16px;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      border-top: solid 1px #f2f2f2;
+      align-items: start;
+      .title {
         margin: 0;
         padding: 0;
-        margin-top: 16px;
-        padding-top: 16px;
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        border-top: solid 1px #f2f2f2;
-        align-items: center;
-        .title {
-          color: #3f3e3e;
-          line-height: 1.4;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          -webkit-line-clamp: 2;
-          max-height: 42px;
-          text-decoration: none;
-          width: 100%;
-        }
-        .price {
-          float: right;
-          line-height: 42px;
-          height: 42px;
-          min-width: 80px;
-          margin-left: 16px;
-          font-weight: bolder;
-          text-align: right;
-        }
+        margin-top: 6px;
+        color: #3f3e3e;
+        line-height: 1.4;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        max-height: 42px;
+        text-decoration: none;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: normal;
       }
-      .ProductCounter {
-        margin-right: 16px;
-        display: none;
-        width: 140px;
-        &.active {
-          display: flex;
-        }
-      }
-      .total {
-        line-height: 42px;
-        height: 42px;
-        min-width: 80px;
-        margin: 0 16px;
-        font-weight: bolder;
-      }
-    }
-  }
-  .checkout-info {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    padding: 0 40px 20px 40px;
-    .total {
-      font-weight: bolder;
-      color: #3f3e3e;
-      font-size: 16px;
-      .title {
-        float: left;
-        text-align: left;
-      }
-      .value {
+      .price {
+        margin-top: 8px;
         float: right;
+        min-width: 80px;
+        margin-left: 16px;
+        font-weight: bolder;
         text-align: right;
       }
     }
-    .checkout-button {
-      margin: 16px 0;
-      width: 100%;
-      background-color: #ea1d2c;
-      color: #fff;
-      border: none;
-      padding: 0 20px;
-      border-radius: 8px;
-      font-weight: bolder;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-family: inherit;
-      font-weight: bolder;
-      height: 50px;
-      font-size: 100%;
-      line-height: 100%;
-      text-decoration: none;
+    .ProductCounter {
+      margin-right: 16px;
+      display: none;
+      width: 140px;
+      &.active {
+        display: flex;
+      }
     }
+    .total {
+      line-height: 42px;
+      height: 42px;
+      min-width: 80px;
+      margin: 0 16px;
+      font-weight: bolder;
+    }
+  }
+}
+.checkout-info {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 0 40px 20px 40px;
+  .total {
+    font-weight: bolder;
+    color: #3f3e3e;
+    .title {
+      margin: 0;
+      padding: 0;
+      float: left;
+      text-align: left;
+      font-size: 16px;
+    }
+    .value {
+      float: right;
+      text-align: right;
+      font-size: 16px;
+    }
+  }
+  .checkout-button {
+    margin: 16px 0;
+    width: 100%;
+    background-color: #ea1d2c;
+    color: #fff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    font-weight: bolder;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-weight: bolder;
+    height: 50px;
+    font-size: 100%;
+    line-height: 100%;
+    text-decoration: none;
   }
 }

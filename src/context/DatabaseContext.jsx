@@ -12,6 +12,7 @@ const DatabaseContext = createContext();
 
 export function DatabaseContextProvider({ children }) {
   const [categories, setCategories] = useState([]);
+  const [brands, setBrands] = useState([]);
   const [catalog, setCatalog] = useState([]);
   const [cart, setCart] = useState({
     items: [],
@@ -66,6 +67,30 @@ export function DatabaseContextProvider({ children }) {
   }, [cart]);
 
   useEffect(() => {
+    const firebaseCategories = collection(db, "categories");
+    getDocs(firebaseCategories).then((snapshot) => {
+      const data =
+        snapshot.size !== 0
+          ? snapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }))
+          : "Nenhum resultado encontrado";
+      setCategories(data);
+    });
+
+    const firebaseBrands = collection(db, "brands");
+    getDocs(firebaseBrands).then((snapshot) => {
+      const data =
+        snapshot.size !== 0
+          ? snapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }))
+          : "Nenhum resultado encontrado";
+      setBrands(data);
+    });
+
     const firebaseCatalog = collection(db, "catalog");
     getDocs(firebaseCatalog).then((snapshot) => {
       const data =
@@ -78,17 +103,7 @@ export function DatabaseContextProvider({ children }) {
       setCatalog(data);
     });
 
-    const firebaseCategories = collection(db, "categories");
-    getDocs(firebaseCategories).then((snapshot) => {
-      const data =
-        snapshot.size !== 0
-          ? snapshot.docs.map((doc) => ({
-              id: doc.id,
-              ...doc.data(),
-            }))
-          : "Nenhum resultado encontrado";
-      setCategories(data);
-    });
+
 
     // const queryCollection = query(
     //   collection(db, "catalog"),
@@ -118,6 +133,7 @@ export function DatabaseContextProvider({ children }) {
     <DatabaseContext.Provider
       value={{
         categories,
+        brands,
         catalog,
         cart,
         cartView,
