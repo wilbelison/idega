@@ -26,7 +26,7 @@ const Brand = () => {
 
   return (
     <>
-    <Header />
+      <Header />
       <main className="Brand">
         <h1 className="title">{brand.title}</h1>
       </main>

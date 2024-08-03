@@ -21,7 +21,7 @@ function Router() {
         element={<Category />}
       />
       <Route
-        path="/marca/:categorySlug"
+        path="/marca/:brandSlug"
         element={<Brand />}
       />
       <Route path="/produto/:productSlug" element={<Product />} />
