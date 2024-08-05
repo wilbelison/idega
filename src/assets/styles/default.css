@@ -165,7 +165,28 @@ button {
     -moz-column-gap: 12px;
     column-gap: 12px;
     align-items: center;
+    a {
+      padding: 8px;
+      text-decoration: none;
+      color: #717171;
+      font-size: 0.875rem;
+      font-weight: bolder;
+      text-wrap: nowrap;
+      &:hover,
+      &.active {
+        color: #ea1d2c;
+      }
+    }
+    .login-button {
+      border: none;
+      background-color: transparent;
+    }
   }
+
+  .LoginButton {
+
+  }
+  
 
   .CartButton {
     display: flex;

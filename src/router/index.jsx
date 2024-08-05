@@ -6,6 +6,7 @@ import Brand from "../pages/Brand";
 import Product from "../pages/Product";
 import Search from "../pages/Search";
 import Cart from "../pages/Cart";
+import Admin from "../pages/Admin";
 
 function Router() {
 
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/produto/:productSlug" element={<Product />} />
       <Route path="/busca" element={<Search />} />
       <Route path="/sacola" element={<Cart />} />
+      <Route path="/admin" element={<Admin />} />
     </Routes>
   );
 }
