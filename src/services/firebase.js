@@ -1,16 +1,4 @@
-import { useEffect } from "react";
 import { initializeApp } from "firebase/app";
-import {
-  getFirestore,
-  doc,
-  getDoc,
-  collection,
-  getDocs,
-  addDoc,
-  query,
-  where,
-  limit,
-} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyATyEtGkCx4ZuftTLgdZsSpOzxkdZca9ko",
@@ -24,14 +12,4 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-const db = getFirestore(app);
-export default db;
-
-// populando data
-
-// const catalog = [];
-
-// catalog.forEach(async (obj) => {
-//   const docRef = await addDoc(collection(db, "catalog"), obj);
-//   console.log("Documento adicionado com ID: ", docRef.id);
-// });
+export default app;

@@ -4,6 +4,7 @@ import Loader from "./components/Loader";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./router";
 
+import { AuthContextProvider } from "./context/AuthContext";
 import { DatabaseContextProvider } from "./context/DatabaseContext";
 
 import "./assets/styles/default.css";
@@ -23,11 +24,13 @@ function App() {
         <Loader />
       ) : (
         <>
-          <DatabaseContextProvider>
-            <BrowserRouter>
-              <Router />
-            </BrowserRouter>
-          </DatabaseContextProvider>
+          <AuthContextProvider>
+            <DatabaseContextProvider>
+              <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
+                <Router />
+              </BrowserRouter>
+            </DatabaseContextProvider>
+          </AuthContextProvider>
         </>
       )}
     </div>

@@ -1,31 +1,28 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
+
+import { useAuth } from "../context/AuthContext";
+
 import iconLogin from "../assets/images/icon-login.svg";
 import iconLogout from "../assets/images/icon-logout.svg";
 
 const LoginButton = () => {
-  const [adminLogged, setAdminLogged] = useState(false);
+  const { signed, user, logout } = useAuth();
 
-  const handleLogin = () => {
-    setAdminLogged(!adminLogged);
-  };
-
-  if (adminLogged) {
+  if (signed) {
     return (
       <>
-        <NavLink to="/admin" className="admin-link" activeclassname="active">
-          Admin
-        </NavLink>
-        <button title="Entrar" className="login-button" onClick={handleLogin}>
-          <img src={iconLogout} alt="Sair" className="icon-logout" />
+        { user.email === "meustudio@gmail.com" ? <NavLink to="/admin" className="link" activeclassname="active">Gerenciar loja</NavLink> : <NavLink to="/orders" className="link" activeclassname="active">Meus pedidos</NavLink> }
+        <button title="Sair" className="LoginButton" onClick={logout}>
+          <img src={iconLogout} alt="Sair" className="icon" />
         </button>
       </>
     );
   } else {
     return (
-      <button title="Entrar" className="login-button" onClick={handleLogin}>
-        <img src={iconLogin} alt="Sair" className="icon-login" />
-      </button>
+      <Link to="/login" title="Entrar" className="LoginButton">
+        <img src={iconLogin} alt="Entrar" className="icon" />
+      </Link>
     );
   }
 };
