@@ -856,6 +856,14 @@ main {
   &.open {
     animation: slide-in-from-right 0.5s forwards;
   }
+  &.empty.open {
+    .ItemsList {
+      height: calc(100% - 40px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   .close {
     top: 8px;
     left: 8px;
