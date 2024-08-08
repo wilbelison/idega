@@ -5,8 +5,10 @@ import React, {
   createContext,
   useCallback,
 } from "react";
-import { collection, getDocs, query, where, limit } from "firebase/firestore";
-import db from "../services/firebase";
+import { getFirestore, collection, getDocs, query, where, limit } from "firebase/firestore";
+import app from "../services/firebase";
+
+const db = getFirestore(app);
 
 const DatabaseContext = createContext();
 
@@ -20,51 +22,54 @@ export function DatabaseContextProvider({ children }) {
   });
   const [cartView, setCartView] = useState(false);
 
-  const getStoreJSON = useCallback((item) => {
-    return JSON.parse(localStorage.getItem(item) || "null");
+  const getStorageJSON = useCallback((item) => {
+    return JSON.parse(sessionStorage.getItem(item) || "null");
   }, []);
 
-  const setStoreJSON = useCallback((item, data) => {
-    localStorage.setItem(item, JSON.stringify(data));
+  const setStorageJSON = useCallback((item, data) => {
+    sessionStorage.setItem(item, JSON.stringify(data));
   }, []);
 
   const toggleCartView = () => {
     setCartView(!cartView);
   };
 
-  const updateCart = useCallback((product, count) => {
-    let newItems = [...cart.items];
-    const itemIndex = newItems.findIndex((item) => item.id === product.id);
+  const updateCart = useCallback(
+    (product, count) => {
+      let newItems = [...cart.items];
+      const itemIndex = newItems.findIndex((item) => item.id === product.id);
 
-    if (itemIndex !== -1) {
-      if (count <= 0) {
-        newItems.splice(itemIndex, 1);
-      } else {
-        newItems[itemIndex].count = count;
+      if (itemIndex !== -1) {
+        if (count <= 0) {
+          newItems.splice(itemIndex, 1);
+        } else {
+          newItems[itemIndex].count = count;
+        }
+      } else if (count > 0) {
+        newItems.push({ ...product, count });
       }
-    } else if (count > 0) {
-      newItems.push({ ...product, count });
-    }
 
-    const newTotal = newItems.reduce(
-      (acc, item) => {
-        acc.count += item.count;
-        acc.price += item.count * item.price;
-        return acc;
-      },
-      { count: 0, price: 0 }
-    );
+      const newTotal = newItems.reduce(
+        (acc, item) => {
+          acc.count += item.count;
+          acc.price += item.count * item.price;
+          return acc;
+        },
+        { count: 0, price: 0 }
+      );
 
-    setCart({
-      items: newItems,
-      total: newTotal,
-    });
+      setCart({
+        items: newItems,
+        total: newTotal,
+      });
 
-    setStoreJSON("cart", {
-      items: newItems,
-      total: newTotal,
-    });
-  }, [cart]);
+      setStorageJSON("@Cart", {
+        items: newItems,
+        total: newTotal,
+      });
+    },
+    [cart]
+  );
 
   useEffect(() => {
     const firebaseCategories = collection(db, "categories");
@@ -103,8 +108,6 @@ export function DatabaseContextProvider({ children }) {
       setCatalog(data);
     });
 
-
-
     // const queryCollection = query(
     //   collection(db, "catalog"),
     //   where("id", "==", 3),
@@ -122,10 +125,10 @@ export function DatabaseContextProvider({ children }) {
     //   console.log(firebaseCatalog);
     // });
 
-    if (getStoreJSON("cart")) {
-      setCart(getStoreJSON("cart"));
+    if (getStorageJSON("@Cart")) {
+      setCart(getStorageJSON("@Cart"));
     } else {
-      setStoreJSON("cart", cart);
+      setStorageJSON("@Cart", cart);
     }
   }, []);
 
