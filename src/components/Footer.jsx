@@ -34,7 +34,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="footer-colum">
-        <h3 className="title">Desenvolvido por Wilbelison Junior</h3>
+        <h3 className="title">Desenvolvido por</h3>
         <ul>
           <li>
             <Link to="https://www.linkedin.com/in/wilbelison/">

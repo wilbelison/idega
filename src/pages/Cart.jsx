@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useDatabase } from "../context/DatabaseContext"
+import { useDatabase } from "../context/DatabaseContext";
 
 import CartHeader from "../components/CartHeader";
 import ItemsList from "../components/ItemsList";
@@ -10,10 +10,10 @@ const Cart = () => {
   return (
     <>
       <CartHeader />
-      <main className="Cart">
+      <main className={`${cart.items.length <= 0 ? "Cart empty" : "Cart"}`}>
         <h1 className="title">Finalizar compra</h1>
         <ItemsList
-          title={`Sacola de compras ${cart.items.length > 0 ? "" : "vazia"}`}
+          title={`Sacola de compras ${cart.items.length > 0 ? "" : "vazia :("}`}
           type="products"
           items={cart.items}
         />
