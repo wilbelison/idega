@@ -5,7 +5,7 @@ import React, {
   createContext,
   useCallback,
 } from "react";
-import { getFirestore, collection, getDocs, query, where, limit } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, where, limit, orderBy } from "firebase/firestore";
 import app from "../services/firebase";
 
 const db = getFirestore(app);
