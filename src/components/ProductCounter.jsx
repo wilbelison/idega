@@ -9,16 +9,17 @@ import iconAdd from "../assets/images/icon-add.svg";
 
 const ProductCounter = ({ product }) => {
   const { cart, updateCart } = useDatabase();
-  const initialCounter = cart.items.find(item => item.id === product.id)?.count || 0;
+  const initialCounter =
+    cart.items.find((item) => item.id === product.id)?.count || 0;
   const [counter, setCounter] = useState(initialCounter);
-  const [stock, setStock] = useState(product.stock);
+  const [stock] = useState(product.stock);
 
   useEffect(() => {
-    const item = cart.items.find(item => item.id === product.id);
+    const item = cart.items.find((item) => item.id === product.id);
     if (item) {
       setCounter(item.count);
     }
-  }, [cart, product]);
+  }, [cart]);
 
   if (!cart) {
     return <Loader />;
@@ -28,9 +29,10 @@ const ProductCounter = ({ product }) => {
     e.preventDefault();
     console.log("remove");
     if (counter > 0) {
-      const newCount = counter - 1;
-      setCounter(newCount);
-      updateCart(product, newCount);
+      setCounter((prevState) => {
+        return prevState - 1;
+      });
+      updateCart(product, counter - 1);
     }
   };
 
@@ -38,9 +40,10 @@ const ProductCounter = ({ product }) => {
     e.preventDefault();
     console.log("add");
     if (stock > counter) {
-      const newCount = counter + 1;
-      setCounter(newCount);
-      updateCart(product, newCount);
+      setCounter((prevState) => {
+        return prevState + 1;
+      });
+      updateCart(product, counter + 1);
     }
   };
 
